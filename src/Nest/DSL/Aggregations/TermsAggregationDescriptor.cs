@@ -31,6 +31,8 @@ namespace Nest
 		[JsonProperty("order")]
 		IDictionary<string, string> Order { get; set; }
 
+		TermsAggregationOrder TermsOrder { get; set; }
+
 		[JsonProperty("include")]
 		TermsIncludeExclude Include { get; set; }
 
@@ -44,6 +46,43 @@ namespace Nest
 		TermsAggregationCollectMode? CollectMode { get; set; }
 	}
 
+	public class TermsAggregationOrder : List<KeyValuePair<string, SortOrder>>
+	{
+		public void Add(string property, SortOrder order)
+		{
+			this.Add(new KeyValuePair<string, SortOrder>(property, order));
+		}
+	}
+
+	public class TermsAggregationOrder<T> : TermsAggregationOrder
+		where T : class
+	{
+		public TermsAggregationOrder<T> DocumentCount(SortOrder? order)
+		{
+			if (!order.HasValue) return this;
+			return this.Add("_count", order.Value);
+		}
+
+		public TermsAggregationOrder<T> Alphabetically(SortOrder? order)
+		{
+			if (!order.HasValue) return this;
+			return this.Add("_term", order.Value);
+		}
+
+		public TermsAggregationOrder<T> AggregationValue(string subAggregation, SortOrder? order)
+		{
+			if (subAggregation.IsNullOrEmpty()) return this;
+			if (!order.HasValue) return this;
+			return this.Add(subAggregation, order.Value);
+		}
+
+		public new TermsAggregationOrder<T> Add(string property, SortOrder order)
+		{
+			this.Add(new KeyValuePair<string, SortOrder>(property, order));
+			return this;
+		}
+	}
+
 	public class TermsAggregator : BucketAggregator, ITermsAggregator
 	{
 		public PropertyPathMarker Field { get; set; }
@@ -53,6 +92,7 @@ namespace Nest
 		public int? MinimumDocumentCount { get; set; }
 		public TermsAggregationExecutionHint? ExecutionHint { get; set; }
 		public IDictionary<string, string> Order { get; set; }
+		public TermsAggregationOrder TermsOrder { get; set; }
 		public TermsIncludeExclude Include { get; set; }
 		public TermsIncludeExclude Exclude { get; set; }
 		public IDictionary<string, object> Params { get; set; }
@@ -77,6 +117,8 @@ namespace Nest
 		TermsAggregationExecutionHint? ITermsAggregator.ExecutionHint { get; set; }
 
 		IDictionary<string, string> ITermsAggregator.Order { get; set; }
+
+		TermsAggregationOrder ITermsAggregator.TermsOrder { get; set; }
 
 		TermsIncludeExclude ITermsAggregator.Include { get; set; }
 
@@ -135,6 +177,17 @@ namespace Nest
 			return this;
 		}
 
+		public TermsAggregationDescriptor<T> Order(TermsAggregationOrder order)
+		{
+			Self.TermsOrder = order;
+			return this;
+		}
+	
+		public TermsAggregationDescriptor<T> Order(Func<TermsAggregationOrder<T>, TermsAggregationOrder> orderSelector)
+		{
+			Self.TermsOrder = orderSelector == null ? null : orderSelector(new TermsAggregationOrder<T>());
+			return this;
+		}
 		public TermsAggregationDescriptor<T> OrderAscending(string key)
 		{
 			Self.Order = new Dictionary<string, string> { {key, "asc"}};

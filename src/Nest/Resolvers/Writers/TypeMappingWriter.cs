@@ -255,8 +255,13 @@ namespace Nest.Resolvers.Writers
 			if (propertyType == typeof(string))
 				return FieldType.String;
 
-			if (propertyType.IsValueType)
-			{
+            // TODO: most probably there are better way to map between type to FieldType
+#if NETFXCORE
+            if (propertyType.GetTypeInfo().IsValueType)
+#else
+            if (propertyType.IsValueType)
+#endif
+            {
 				switch (propertyType.Name)
 				{
 					case "Int32":
@@ -283,11 +288,15 @@ namespace Nest.Resolvers.Writers
 		{
 			if (type.IsArray)
 				return type.GetElementType();
-
+#if NETFXCORE
+            var typeinfo = type.GetTypeInfo();
+            if (typeinfo.IsGenericType && type.GetGenericArguments().Length == 1 && (typeinfo.ImplementedInterfaces.Any(i => i.Name == "IEnumerable") || Nullable.GetUnderlyingType(type) != null))
+#else
             if (type.IsGenericType && type.GetGenericArguments().Length == 1 && (type.GetInterface("IEnumerable") != null || Nullable.GetUnderlyingType(type) != null))
-				return type.GetGenericArguments()[0];
+#endif
+                return type.GetGenericArguments()[0];
 
-			return type;
+            return type;
 		}
 	}
 }

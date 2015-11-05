@@ -9,6 +9,7 @@ using Elasticsearch.Net.Providers;
 using Elasticsearch.Net.Serialization;
 using System.Threading.Tasks;
 using Elasticsearch.Net.Connection.Configuration;
+using System.Reflection;
 
 namespace Elasticsearch.Net.Connection.RequestHandlers
 {

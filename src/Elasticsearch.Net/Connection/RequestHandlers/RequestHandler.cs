@@ -10,6 +10,7 @@ using Elasticsearch.Net.ConnectionPool;
 using Elasticsearch.Net.Exceptions;
 using Elasticsearch.Net.Providers;
 using Elasticsearch.Net.Serialization;
+using System.Reflection;
 
 namespace Elasticsearch.Net.Connection.RequestHandlers
 {

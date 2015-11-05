@@ -3,6 +3,7 @@ using System.Collections;
 using System.Globalization;
 using Nest.Resolvers;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace Nest
 {

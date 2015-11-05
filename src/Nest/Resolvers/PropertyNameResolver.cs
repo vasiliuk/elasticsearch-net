@@ -45,8 +45,12 @@ namespace Nest.Resolvers
 			if (CachedTypeLookups.TryGetValue(type, out attr))
 				return attr;
 
-			var attributes = type.GetCustomAttributes(typeof(ElasticTypeAttribute), true);
-			if (attributes.HasAny())
+#if NETFXCORE
+            var attributes = type.GetTypeInfo().GetCustomAttributes(typeof(ElasticTypeAttribute), true);
+#else
+            var attributes = type.GetCustomAttributes(typeof(ElasticTypeAttribute), true);
+#endif
+            if (attributes.HasAny())
 				attr = ((ElasticTypeAttribute)attributes.First());
 			CachedTypeLookups.TryAdd(type, attr);
 			return attr;
@@ -171,8 +175,13 @@ namespace Nest.Resolvers
 		{
 			if (method.DeclaringType != typeof(Queryable) && method.DeclaringType != typeof(Enumerable))
 				return false;
-			return Attribute.GetCustomAttribute(method, typeof(ExtensionAttribute)) != null;
-		}
+
+#if NETFXCORE
+            return method.GetCustomAttribute<ExtensionAttribute>() != null;
+#else
+            return Attribute.GetCustomAttribute(method, typeof(ExtensionAttribute)) != null;
+#endif
+        }
 	}
 	
 

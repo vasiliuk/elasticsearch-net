@@ -8,6 +8,7 @@ using Elasticsearch.Net.Connection.RequestState;
 using Elasticsearch.Net.ConnectionPool;
 using Elasticsearch.Net.Providers;
 using Elasticsearch.Net.Serialization;
+using System.Reflection;
 
 namespace Elasticsearch.Net.Connection.RequestHandlers
 {

@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 
 namespace Nest.Domain
 {
@@ -74,8 +75,8 @@ namespace Nest.Domain
 			if (((IFieldSelection<T>)this).FieldValuesDictionary.TryGetValue(path, out o))
 			{
 				var t = typeof(K);
-				if (o is JArray && t.GetInterfaces().Contains(typeof(IEnumerable)))
-				{
+                if (o is JArray && t.GetInterfaces().Contains(typeof(IEnumerable)))
+                {
 					var array = (JArray)o;
 					return array.ToObject<K>();
 				}

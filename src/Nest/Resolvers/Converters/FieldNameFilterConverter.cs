@@ -5,6 +5,7 @@ using Nest.Resolvers;
 using Nest.Resolvers.Converters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Reflection;
 
 namespace Nest
 {

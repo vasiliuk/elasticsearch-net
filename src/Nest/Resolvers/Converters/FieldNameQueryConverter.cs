@@ -3,6 +3,7 @@ using Nest.DSL.Query.Behaviour;
 using Nest.Resolvers;
 using Nest.Resolvers.Converters;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace Nest
 {

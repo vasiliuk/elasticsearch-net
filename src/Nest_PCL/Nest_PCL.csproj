@@ -39,6 +39,9 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\elasticsearch.net_pcl\!compatibility\TypeExtensions.cs">
+      <Link>!Compatibility\TypeExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\Nest\ConvenienceExtensions\AliasExtensions.cs">
       <Link>ConvenienceExtensions\AliasExtensions.cs</Link>
     </Compile>

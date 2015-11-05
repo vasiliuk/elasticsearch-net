@@ -33,9 +33,12 @@ namespace Nest
 
 			if (!char.IsUpper(s[0]))
 				return s;
-
-			string camelCase = char.ToLower(s[0], CultureInfo.InvariantCulture).ToString(CultureInfo.InvariantCulture);
-			if (s.Length > 1)
+#if NETFXCORE
+            string camelCase = char.ToLowerInvariant(s[0]).ToString();
+#else
+            string camelCase = char.ToLower(s[0], CultureInfo.InvariantCulture).ToString(CultureInfo.InvariantCulture);
+#endif
+            if (s.Length > 1)
 				camelCase += s.Substring(1);
 
 			return camelCase;

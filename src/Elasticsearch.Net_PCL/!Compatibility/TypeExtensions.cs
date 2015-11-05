@@ -5,13 +5,15 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
+#if NETFXCORE
+
 
 public static class TypeExtensions
 {
-    public static bool IsAssignableFrom(this Type type, Type c)
-    {
-        return type.GetTypeInfo().IsAssignableFrom(c.GetTypeInfo());
-    }
+    //public static bool IsAssignableFrom(this Type type, Type c)
+    //{
+    //    return type.GetTypeInfo().IsAssignableFrom(c.GetTypeInfo());
+    //}
 
     private static readonly Dictionary<Type, TypeCode> _typeCodeTable =
             new Dictionary<Type, TypeCode>()
@@ -41,9 +43,15 @@ public static class TypeExtensions
         return _typeCodeTable.TryGetValue(type, out result) ? result : TypeCode.Object;
     }
 
-    public static FieldInfo GetField(this Type type, string name)
-    {
-        return type.GetTypeInfo().GetDeclaredField(name);
-    }
+    //public static Type GetInterface(this Type type, string name)
+    //{
+    //    return type.GetTypeInfo().ImplementedInterfaces.FirstOrDefault(i => i.Name == name);
+    //}
+
+    //public static FieldInfo GetField(this Type type, string name)
+    //{
+    //    return type.GetTypeInfo().GetDeclaredField(name);
+    //}
 }
 
+#endif

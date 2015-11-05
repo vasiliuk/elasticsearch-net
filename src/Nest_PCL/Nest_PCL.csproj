@@ -1,0 +1,2962 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E17046BC-B88E-4D67-82FA-EFCD5F4AB7EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nest_PCL</RootNamespace>
+    <AssemblyName>Nest_PCL</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFXCORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFXCORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Nest\ConvenienceExtensions\AliasExtensions.cs">
+      <Link>ConvenienceExtensions\AliasExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\CountExtensions.cs">
+      <Link>ConvenienceExtensions\CountExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\CreateIndexExtensions.cs">
+      <Link>ConvenienceExtensions\CreateIndexExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\DeleteExtensions.cs">
+      <Link>ConvenienceExtensions\DeleteExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\DeleteIndexExtensions.cs">
+      <Link>ConvenienceExtensions\DeleteIndexExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\DeleteManyExtensions.cs">
+      <Link>ConvenienceExtensions\DeleteManyExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\ExistsExtensions.cs">
+      <Link>ConvenienceExtensions\ExistsExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\GetExtensions.cs">
+      <Link>ConvenienceExtensions\GetExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\GetManyExtensions.cs">
+      <Link>ConvenienceExtensions\GetManyExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\IndexManyExtensions.cs">
+      <Link>ConvenienceExtensions\IndexManyExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\OpenCloseIndexExtensions.cs">
+      <Link>ConvenienceExtensions\OpenCloseIndexExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\ScrollExtensions.cs">
+      <Link>ConvenienceExtensions\ScrollExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\SerializerExtensions.cs">
+      <Link>ConvenienceExtensions\SerializerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\SourceExtensions.cs">
+      <Link>ConvenienceExtensions\SourceExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ConvenienceExtensions\SourceManyExtensions.cs">
+      <Link>ConvenienceExtensions\SourceManyExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\AggregationsHelper.cs">
+      <Link>Domain\Aggregations\AggregationsHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\Bucket.cs">
+      <Link>Domain\Aggregations\Bucket.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\BucketAggregationBase.cs">
+      <Link>Domain\Aggregations\BucketAggregationBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\ExtendedStatsMetric.cs">
+      <Link>Domain\Aggregations\ExtendedStatsMetric.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\FiltersBucket.cs">
+      <Link>Domain\Aggregations\FiltersBucket.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\GeoBoundsMetric.cs">
+      <Link>Domain\Aggregations\GeoBoundsMetric.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\HistogramItem.cs">
+      <Link>Domain\Aggregations\HistogramItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\IAggration.cs">
+      <Link>Domain\Aggregations\IAggration.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\IBucketAggregation.cs">
+      <Link>Domain\Aggregations\IBucketAggregation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\IBucketItem.cs">
+      <Link>Domain\Aggregations\IBucketItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\IBucketWithCountAggregation.cs">
+      <Link>Domain\Aggregations\IBucketWithCountAggregation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\IMetricAggregation.cs">
+      <Link>Domain\Aggregations\IMetricAggregation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\ISignificantTermsHeuristic.cs">
+      <Link>Domain\Aggregations\ISignificantTermsHeuristic.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\KeyItem.cs">
+      <Link>Domain\Aggregations\KeyItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\PercentilesMetric.cs">
+      <Link>Domain\Aggregations\PercentilesMetric.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\RangeItem.cs">
+      <Link>Domain\Aggregations\RangeItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\ScriptedValueMetric.cs">
+      <Link>Domain\Aggregations\ScriptedValueMetric.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\SignificantTermItem.cs">
+      <Link>Domain\Aggregations\SignificantTermItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\SingleBucket.cs">
+      <Link>Domain\Aggregations\SingleBucket.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\StatsMetric.cs">
+      <Link>Domain\Aggregations\StatsMetric.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\TermsIncludeExclude.cs">
+      <Link>Domain\Aggregations\TermsIncludeExclude.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\TopHitsMetric.cs">
+      <Link>Domain\Aggregations\TopHitsMetric.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Aggregations\ValueMetric.cs">
+      <Link>Domain\Aggregations\ValueMetric.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Alias\AliasAddDescriptor.cs">
+      <Link>Domain\Alias\AliasAddDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Alias\AliasAddOperation.cs">
+      <Link>Domain\Alias\AliasAddOperation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Alias\AliasDefinition.cs">
+      <Link>Domain\Alias\AliasDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Alias\AliasRemoveDescriptor.cs">
+      <Link>Domain\Alias\AliasRemoveDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Alias\AliasRemoveOperation.cs">
+      <Link>Domain\Alias\AliasRemoveOperation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Alias\CreateAliasDescriptor.cs">
+      <Link>Domain\Alias\CreateAliasDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Alias\IAliasAction.cs">
+      <Link>Domain\Alias\IAliasAction.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Alias\IndexAliases.cs">
+      <Link>Domain\Alias\IndexAliases.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\AnalysisSettings.cs">
+      <Link>Domain\Analysis\Analyzers\AnalysisSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\AnalyzerBase.cs">
+      <Link>Domain\Analysis\Analyzers\AnalyzerBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\CustomAnalyzer.cs">
+      <Link>Domain\Analysis\Analyzers\CustomAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\KeywordAnalyzer.cs">
+      <Link>Domain\Analysis\Analyzers\KeywordAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\Language.cs">
+      <Link>Domain\Analysis\Analyzers\Language.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\LanguageAnalyzer.cs">
+      <Link>Domain\Analysis\Analyzers\LanguageAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\PatternAnalyzer.cs">
+      <Link>Domain\Analysis\Analyzers\PatternAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\SimpleAnalyzer.cs">
+      <Link>Domain\Analysis\Analyzers\SimpleAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\SnowballAnalyzer.cs">
+      <Link>Domain\Analysis\Analyzers\SnowballAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\StandardAnalyzer.cs">
+      <Link>Domain\Analysis\Analyzers\StandardAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\StopAnalyzer.cs">
+      <Link>Domain\Analysis\Analyzers\StopAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Analyzers\WhitespaceAnalyzer.cs">
+      <Link>Domain\Analysis\Analyzers\WhitespaceAnalyzer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\CharFilter\CharFilterBase.cs">
+      <Link>Domain\Analysis\CharFilter\CharFilterBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\CharFilter\HtmlStripCharFilter.cs">
+      <Link>Domain\Analysis\CharFilter\HtmlStripCharFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\CharFilter\MappingCharFilter.cs">
+      <Link>Domain\Analysis\CharFilter\MappingCharFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\CharFilter\PatternReplaceCharFilter.cs">
+      <Link>Domain\Analysis\CharFilter\PatternReplaceCharFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\IAnalysisSetting.cs">
+      <Link>Domain\Analysis\IAnalysisSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\AsciiFoldingTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\AsciiFoldingTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\CommonGramsTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\CommonGramsTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\CompoundWordTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\CompoundWordTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\DelimitedPayloadTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\DelimitedPayloadTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\DictionaryDecompounderTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\DictionaryDecompounderTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\EdgeNgramTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\EdgeNgramTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\ElisionTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\ElisionTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\HunspellTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\HunspellTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\HyphenationDecompounderTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\HyphenationDecompounderTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\KeepTypesTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\KeepTypesTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\KeepWordsTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\KeepWordsTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\KeywordMarkerTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\KeywordMarkerTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\KeywordRepeatTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\KeywordRepeatTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\KStemTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\KStemTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\LengthTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\LengthTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\LimitTokenCountTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\LimitTokenCountTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\LowercaseTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\LowercaseTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\NgramTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\NgramTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\PatternCaptureTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\PatternCaptureTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\PatternReplaceTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\PatternReplaceTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\PhoneticTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\PhoneticTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\PorterStemTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\PorterStemTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\ReverseTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\ReverseTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\ShingleTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\ShingleTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\SnowballTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\SnowballTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\StandardTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\StandardTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\StemmerOverrideTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\StemmerOverrideTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\StemmerTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\StemmerTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\StopTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\StopTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\SynonymTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\SynonymTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\TokenFilterBase.cs">
+      <Link>Domain\Analysis\TokenFilter\TokenFilterBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\TrimTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\TrimTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\TruncateTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\TruncateTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\UniqueTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\UniqueTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\UppercaseTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\UppercaseTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\TokenFilter\WordDelimiterTokenFilter.cs">
+      <Link>Domain\Analysis\TokenFilter\WordDelimiterTokenFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Tokenizer\EdgeNGramTokenizer.cs">
+      <Link>Domain\Analysis\Tokenizer\EdgeNGramTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Tokenizer\KeywordTokenizer.cs">
+      <Link>Domain\Analysis\Tokenizer\KeywordTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Tokenizer\LetterTokenizer.cs">
+      <Link>Domain\Analysis\Tokenizer\LetterTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Tokenizer\LowercaseTokenizer.cs">
+      <Link>Domain\Analysis\Tokenizer\LowercaseTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Tokenizer\NGramTokenizer.cs">
+      <Link>Domain\Analysis\Tokenizer\NGramTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Tokenizer\PathHierarchyTokenizer.cs">
+      <Link>Domain\Analysis\Tokenizer\PathHierarchyTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Tokenizer\PatternTokenizer.cs">
+      <Link>Domain\Analysis\Tokenizer\PatternTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Tokenizer\StandardTokenizer.cs">
+      <Link>Domain\Analysis\Tokenizer\StandardTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Tokenizer\TokenizerBase.cs">
+      <Link>Domain\Analysis\Tokenizer\TokenizerBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Tokenizer\UaxEmailUrlTokenizer.cs">
+      <Link>Domain\Analysis\Tokenizer\UaxEmailUrlTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Analysis\Tokenizer\WhitespaceTokenizer.cs">
+      <Link>Domain\Analysis\Tokenizer\WhitespaceTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Bulk\BulkOperationDescriptorBase.cs">
+      <Link>Domain\Bulk\BulkOperationDescriptorBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Bulk\BulkUpdateBody.cs">
+      <Link>Domain\Bulk\BulkUpdateBody.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Bulk\IBulkOperation.cs">
+      <Link>Domain\Bulk\IBulkOperation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatAliasesRecord.cs">
+      <Link>Domain\Cat\CatAliasesRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatAllocationRecord.cs">
+      <Link>Domain\Cat\CatAllocationRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatCountRecord.cs">
+      <Link>Domain\Cat\CatCountRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatFielddataRecord.cs">
+      <Link>Domain\Cat\CatFielddataRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatHealthRecord.cs">
+      <Link>Domain\Cat\CatHealthRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatIndicesRecord.cs">
+      <Link>Domain\Cat\CatIndicesRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatMasterRecord.cs">
+      <Link>Domain\Cat\CatMasterRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatNodesRecord.cs">
+      <Link>Domain\Cat\CatNodesRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatPendingTasksRecord.cs">
+      <Link>Domain\Cat\CatPendingTasksRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatPluginsRecord.cs">
+      <Link>Domain\Cat\CatPluginsRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatRecoveryRecord.cs">
+      <Link>Domain\Cat\CatRecoveryRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatShardsRecord.cs">
+      <Link>Domain\Cat\CatShardsRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\CatThreadPoolRecord.cs">
+      <Link>Domain\Cat\CatThreadPoolRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cat\ICatRecord.cs">
+      <Link>Domain\Cat\ICatRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cluster\ClusterRerouteDecision.cs">
+      <Link>Domain\Cluster\ClusterRerouteDecision.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cluster\ClusterRerouteExplanation.cs">
+      <Link>Domain\Cluster\ClusterRerouteExplanation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cluster\ClusterRerouteParameters.cs">
+      <Link>Domain\Cluster\ClusterRerouteParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Cluster\ClusterRerouteState.cs">
+      <Link>Domain\Cluster\ClusterRerouteState.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Connection\ConnectionSettings.cs">
+      <Link>Domain\Connection\ConnectionSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Connection\IConnectionSettingsValues.cs">
+      <Link>Domain\Connection\IConnectionSettingsValues.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\DSL\ChildScoreType.cs">
+      <Link>Domain\DSL\ChildScoreType.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\DSL\DescriptorForAttribute.cs">
+      <Link>Domain\DSL\DescriptorForAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\DSL\Filter.cs">
+      <Link>Domain\DSL\Filter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\DSL\ICustomJsonReader.cs">
+      <Link>Domain\DSL\ICustomJsonReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\DSL\IPathInfo.cs">
+      <Link>Domain\DSL\IPathInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\DSL\LatLon.cs">
+      <Link>Domain\DSL\LatLon.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\DSL\NoMatchShortcut.cs">
+      <Link>Domain\DSL\NoMatchShortcut.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\DSL\ParentScoreType.cs">
+      <Link>Domain\DSL\ParentScoreType.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\DSL\Query.cs">
+      <Link>Domain\DSL\Query.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\DateHistogramFacet.cs">
+      <Link>Domain\Facets\DateHistogramFacet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\DateRangeFacet.cs">
+      <Link>Domain\Facets\DateRangeFacet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\Facet.cs">
+      <Link>Domain\Facets\Facet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\FacetItem.cs">
+      <Link>Domain\Facets\FacetItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\FilterFacet.cs">
+      <Link>Domain\Facets\FilterFacet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\GeoDistanceFacet.cs">
+      <Link>Domain\Facets\GeoDistanceFacet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\HistogramFacet.cs">
+      <Link>Domain\Facets\HistogramFacet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\QueryFacet.cs">
+      <Link>Domain\Facets\QueryFacet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\RangeFacet.cs">
+      <Link>Domain\Facets\RangeFacet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\StatisticalFacet.cs">
+      <Link>Domain\Facets\StatisticalFacet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\TermFacet.cs">
+      <Link>Domain\Facets\TermFacet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Facets\TermStatsFacet.cs">
+      <Link>Domain\Facets\TermStatsFacet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\FluentDictionary.cs">
+      <Link>Domain\FluentDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\CircleGeoShape.cs">
+      <Link>Domain\Geo\CircleGeoShape.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\EnvelopeGeoShape.cs">
+      <Link>Domain\Geo\EnvelopeGeoShape.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\GeoLocation.cs">
+      <Link>Domain\Geo\GeoLocation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\GeoPrecision.cs">
+      <Link>Domain\Geo\GeoPrecision.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\GeoShape.cs">
+      <Link>Domain\Geo\GeoShape.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\IndexedGeoShape.cs">
+      <Link>Domain\Geo\IndexedGeoShape.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\LineStringGeoShape.cs">
+      <Link>Domain\Geo\LineStringGeoShape.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\MultiLineStringGeoShape.cs">
+      <Link>Domain\Geo\MultiLineStringGeoShape.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\MultiPointGeoShape.cs">
+      <Link>Domain\Geo\MultiPointGeoShape.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\MultiPolygonGeoShape.cs">
+      <Link>Domain\Geo\MultiPolygonGeoShape.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\PointGeoShape.cs">
+      <Link>Domain\Geo\PointGeoShape.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Geo\PolygonGeoShape.cs">
+      <Link>Domain\Geo\PolygonGeoShape.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\AnalyzeToken.cs">
+      <Link>Domain\Hit\AnalyzeToken.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\ExplainGet.cs">
+      <Link>Domain\Hit\ExplainGet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\Explanation.cs">
+      <Link>Domain\Hit\Explanation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\ExplanationDetail.cs">
+      <Link>Domain\Hit\ExplanationDetail.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\Highlight.cs">
+      <Link>Domain\Hit\Highlight.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\HighlightCollection.cs">
+      <Link>Domain\Hit\HighlightCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\Hit.cs">
+      <Link>Domain\Hit\Hit.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\HitsMetaData.cs">
+      <Link>Domain\Hit\HitsMetaData.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\IndexSegment.cs">
+      <Link>Domain\Hit\IndexSegment.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\MultiGetHit.cs">
+      <Link>Domain\Hit\MultiGetHit.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\MultiHit.cs">
+      <Link>Domain\Hit\MultiHit.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\Segment.cs">
+      <Link>Domain\Hit\Segment.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\ShardSegmentRouting.cs">
+      <Link>Domain\Hit\ShardSegmentRouting.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\ShardsMetaData.cs">
+      <Link>Domain\Hit\ShardsMetaData.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\ShardsSegment.cs">
+      <Link>Domain\Hit\ShardsSegment.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Hit\ValidationExplanation.cs">
+      <Link>Domain\Hit\ValidationExplanation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\ICustomJson.cs">
+      <Link>Domain\ICustomJson.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Attributes\ElasticPropertyAttribute.cs">
+      <Link>Domain\Mapping\Attributes\ElasticPropertyAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Attributes\ElasticTypeAttribute.cs">
+      <Link>Domain\Mapping\Attributes\ElasticTypeAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Attributes\IElasticPropertyAttribute.cs">
+      <Link>Domain\Mapping\Attributes\IElasticPropertyAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Attributes\IElasticPropertyVisitor.cs">
+      <Link>Domain\Mapping\Attributes\IElasticPropertyVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\AttachmentMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\AttachmentMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\BinaryMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\BinaryMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\BooleanMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\BooleanMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\CompletionMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\CompletionMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\CorePropertiesDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\CorePropertiesDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\DateMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\DateMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\DynamicTemplatesDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\DynamicTemplatesDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\FieldDataFilterDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\FieldDataFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\FieldDataFrequencyFilterDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\FieldDataFrequencyFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\FieldDataNonStringMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\FieldDataNonStringMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\FieldDataRegexFilterDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\FieldDataRegexFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\FieldDataStringMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\FieldDataStringMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\GenericMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\GenericMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\GeoPointMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\GeoPointMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\GeoShapeMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\GeoShapeMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\IPMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\IPMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\MappingTransformDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\MappingTransformDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\MultiFieldMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\MultiFieldMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\NestedObjectMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\NestedObjectMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\NumberMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\NumberMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\ObjectMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\ObjectMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\PropertiesDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\PropertiesDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\SingleMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\SingleMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\StringMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\StringMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Descriptors\SuggestContextMappingDescriptor.cs">
+      <Link>Domain\Mapping\Descriptors\SuggestContextMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\IFieldMapping.cs">
+      <Link>Domain\Mapping\IFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\ParentTypeMapping.cs">
+      <Link>Domain\Mapping\ParentTypeMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\PropertyMapping.cs">
+      <Link>Domain\Mapping\PropertyMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\AllFieldMapping.cs">
+      <Link>Domain\Mapping\SpecialFields\AllFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\AnalyzerFieldMapping.cs">
+      <Link>Domain\Mapping\SpecialFields\AnalyzerFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\BoostFieldMapping.cs">
+      <Link>Domain\Mapping\SpecialFields\BoostFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\DynamicTemplate.cs">
+      <Link>Domain\Mapping\SpecialFields\DynamicTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\IdFieldMapping.cs">
+      <Link>Domain\Mapping\SpecialFields\IdFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\IndexFieldMapping.cs">
+      <Link>Domain\Mapping\SpecialFields\IndexFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\ISpecialField.cs">
+      <Link>Domain\Mapping\SpecialFields\ISpecialField.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\RoutingFieldMapping.cs">
+      <Link>Domain\Mapping\SpecialFields\RoutingFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\SizeFieldMapping.cs">
+      <Link>Domain\Mapping\SpecialFields\SizeFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\SourceFieldMapping.cs">
+      <Link>Domain\Mapping\SpecialFields\SourceFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\TimestampFieldMapping.cs">
+      <Link>Domain\Mapping\SpecialFields\TimestampFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\TtlFieldMapping.cs">
+      <Link>Domain\Mapping\SpecialFields\TtlFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SpecialFields\TypeFieldMapping.cs">
+      <Link>Domain\Mapping\SpecialFields\TypeFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SubMappings\FieldData\FieldDataFilter.cs">
+      <Link>Domain\Mapping\SubMappings\FieldData\FieldDataFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SubMappings\FieldData\FieldDataFrequencyFilter.cs">
+      <Link>Domain\Mapping\SubMappings\FieldData\FieldDataFrequencyFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SubMappings\FieldData\FieldDataMapping.cs">
+      <Link>Domain\Mapping\SubMappings\FieldData\FieldDataMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SubMappings\FieldData\FieldDataNonStringMapping.cs">
+      <Link>Domain\Mapping\SubMappings\FieldData\FieldDataNonStringMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SubMappings\FieldData\FieldDataRegexFilter.cs">
+      <Link>Domain\Mapping\SubMappings\FieldData\FieldDataRegexFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SubMappings\FieldData\FieldDataStringMapping.cs">
+      <Link>Domain\Mapping\SubMappings\FieldData\FieldDataStringMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SubMappings\MappingTransform.cs">
+      <Link>Domain\Mapping\SubMappings\MappingTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\SubMappings\NormsMapping.cs">
+      <Link>Domain\Mapping\SubMappings\NormsMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\AttachmentMapping.cs">
+      <Link>Domain\Mapping\Types\AttachmentMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\BinaryMapping.cs">
+      <Link>Domain\Mapping\Types\BinaryMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\BooleanMapping.cs">
+      <Link>Domain\Mapping\Types\BooleanMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\CompletionMapping.cs">
+      <Link>Domain\Mapping\Types\CompletionMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\DateMapping.cs">
+      <Link>Domain\Mapping\Types\DateMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\GenericMapping.cs">
+      <Link>Domain\Mapping\Types\GenericMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\GeoPointMapping.cs">
+      <Link>Domain\Mapping\Types\GeoPointMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\GeoShapeMapping.cs">
+      <Link>Domain\Mapping\Types\GeoShapeMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\IElasticCoreType.cs">
+      <Link>Domain\Mapping\Types\IElasticCoreType.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\IElasticType.cs">
+      <Link>Domain\Mapping\Types\IElasticType.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\IPMapping.cs">
+      <Link>Domain\Mapping\Types\IPMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\MultiFieldMapping.cs">
+      <Link>Domain\Mapping\Types\MultiFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\NestedObjectMapping.cs">
+      <Link>Domain\Mapping\Types\NestedObjectMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\NumberMapping.cs">
+      <Link>Domain\Mapping\Types\NumberMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\ObjectMapping.cs">
+      <Link>Domain\Mapping\Types\ObjectMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\RootObjectMapping.cs">
+      <Link>Domain\Mapping\Types\RootObjectMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\StringMapping.cs">
+      <Link>Domain\Mapping\Types\StringMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\TemplateMapping.cs">
+      <Link>Domain\Mapping\Types\TemplateMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Mapping\Types\WarmerMapping.cs">
+      <Link>Domain\Mapping\Types\WarmerMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Marker\IndexNameMarker.cs">
+      <Link>Domain\Marker\IndexNameMarker.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Marker\PropertyNameMarker.cs">
+      <Link>Domain\Marker\PropertyNameMarker.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Marker\PropertyPathMarker.cs">
+      <Link>Domain\Marker\PropertyPathMarker.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Marker\TypeNameMarker.cs">
+      <Link>Domain\Marker\TypeNameMarker.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Observers\Observer.cs">
+      <Link>Domain\Observers\Observer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Observers\ReindexObservable.cs">
+      <Link>Domain\Observers\ReindexObservable.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Observers\ReindexObserver.cs">
+      <Link>Domain\Observers\ReindexObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Observers\RestoreObservable.cs">
+      <Link>Domain\Observers\RestoreObservable.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Observers\RestoreObserver.cs">
+      <Link>Domain\Observers\RestoreObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Observers\SnapshotObservable.cs">
+      <Link>Domain\Observers\SnapshotObservable.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Observers\SnapshotObserver.cs">
+      <Link>Domain\Observers\SnapshotObserver.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Paths\ElasticSearchPathInfo.cs">
+      <Link>Domain\Paths\ElasticSearchPathInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Paths\FieldSelection.cs">
+      <Link>Domain\Paths\FieldSelection.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Paths\FluentFieldList.cs">
+      <Link>Domain\Paths\FluentFieldList.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Paths\PathInfoHttpMethod.cs">
+      <Link>Domain\Paths\PathInfoHttpMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Property.cs">
+      <Link>Domain\Property.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\RawJson.cs">
+      <Link>Domain\RawJson.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Recovery\RecoveryBytes.cs">
+      <Link>Domain\Recovery\RecoveryBytes.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Recovery\RecoveryFileDetails.cs">
+      <Link>Domain\Recovery\RecoveryFileDetails.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Recovery\RecoveryFiles.cs">
+      <Link>Domain\Recovery\RecoveryFiles.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Recovery\RecoveryIndexStatus.cs">
+      <Link>Domain\Recovery\RecoveryIndexStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Recovery\RecoveryOrigin.cs">
+      <Link>Domain\Recovery\RecoveryOrigin.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Recovery\RecoveryStartStatus.cs">
+      <Link>Domain\Recovery\RecoveryStartStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Recovery\RecoveryStatus.cs">
+      <Link>Domain\Recovery\RecoveryStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Recovery\RecoveryTranslogStatus.cs">
+      <Link>Domain\Recovery\RecoveryTranslogStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Repository\IRepository.cs">
+      <Link>Domain\Repository\IRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Repository\Snapshot.cs">
+      <Link>Domain\Repository\Snapshot.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Repository\SnapshotRestore.cs">
+      <Link>Domain\Repository\SnapshotRestore.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Repository\SnapshotShardFailure.cs">
+      <Link>Domain\Repository\SnapshotShardFailure.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\RequestParametersExtensions.Generated.cs">
+      <Link>Domain\RequestParametersExtensions.Generated.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\AcknowledgedResponse.cs">
+      <Link>Domain\Responses\AcknowledgedResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\AnalyzeResponse.cs">
+      <Link>Domain\Responses\AnalyzeResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\BaseResponse.cs">
+      <Link>Domain\Responses\BaseResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\BulkCreateResponseItem.cs">
+      <Link>Domain\Responses\BulkCreateResponseItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\BulkDeleteResponseItem.cs">
+      <Link>Domain\Responses\BulkDeleteResponseItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\BulkIndexResponseItem.cs">
+      <Link>Domain\Responses\BulkIndexResponseItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\BulkOperationResponseItem.cs">
+      <Link>Domain\Responses\BulkOperationResponseItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\BulkResponse.cs">
+      <Link>Domain\Responses\BulkResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\BulkUpdateResponseItem.cs">
+      <Link>Domain\Responses\BulkUpdateResponseItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\CatResponse.cs">
+      <Link>Domain\Responses\CatResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\ClusterGetSettingsResponse.cs">
+      <Link>Domain\Responses\ClusterGetSettingsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\ClusterPendingTasksResponse.cs">
+      <Link>Domain\Responses\ClusterPendingTasksResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\ClusterPutSettingsResponse.cs">
+      <Link>Domain\Responses\ClusterPutSettingsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\ClusterRerouteResponse.cs">
+      <Link>Domain\Responses\ClusterRerouteResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\ClusterStateResponse.cs">
+      <Link>Domain\Responses\ClusterStateResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\ClusterStatsResponse.cs">
+      <Link>Domain\Responses\ClusterStatsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\CountResponse.cs">
+      <Link>Domain\Responses\CountResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\DeleteAliasResponse.cs">
+      <Link>Domain\Responses\DeleteAliasResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\DeleteResponse.cs">
+      <Link>Domain\Responses\DeleteResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\DeleteScriptResponse.cs">
+      <Link>Domain\Responses\DeleteScriptResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\DeleteSearchTemplateResponse.cs">
+      <Link>Domain\Responses\DeleteSearchTemplateResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\ElasticSearchVersionInfo.cs">
+      <Link>Domain\Responses\ElasticSearchVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\EmptyResponse.cs">
+      <Link>Domain\Responses\EmptyResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\ExplainResponse.cs">
+      <Link>Domain\Responses\ExplainResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\GetAliasesResponse.cs">
+      <Link>Domain\Responses\GetAliasesResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\GetFieldMappingResponse.cs">
+      <Link>Domain\Responses\GetFieldMappingResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\GetIndexResponse.cs">
+      <Link>Domain\Responses\GetIndexResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\GetMappingResponse.cs">
+      <Link>Domain\Responses\GetMappingResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\GetRepositoryResponse.cs">
+      <Link>Domain\Responses\GetRepositoryResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\GetResponse.cs">
+      <Link>Domain\Responses\GetResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\GetScriptResponse.cs">
+      <Link>Domain\Responses\GetScriptResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\GetSearchTemplateResponse.cs">
+      <Link>Domain\Responses\GetSearchTemplateResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\GetSnapshotResponse.cs">
+      <Link>Domain\Responses\GetSnapshotResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\GlobalStatsResponse.cs">
+      <Link>Domain\Responses\GlobalStatsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\HealthResponse.cs">
+      <Link>Domain\Responses\HealthResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\IBulkResponse.cs">
+      <Link>Domain\Responses\IBulkResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\IMultiSearchResponse.cs">
+      <Link>Domain\Responses\IMultiSearchResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\IndexExistsResponse.cs">
+      <Link>Domain\Responses\IndexExistsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\IndexResponse.cs">
+      <Link>Domain\Responses\IndexResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\IndexSettingsResponse.cs">
+      <Link>Domain\Responses\IndexSettingsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\IndicesOperationResponse.cs">
+      <Link>Domain\Responses\IndicesOperationResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\IndicesResponse.cs">
+      <Link>Domain\Responses\IndicesResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\IReindexResponse.cs">
+      <Link>Domain\Responses\IReindexResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\IShardsOperationResponse.cs">
+      <Link>Domain\Responses\IShardsOperationResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\MultiGetResponse.cs">
+      <Link>Domain\Responses\MultiGetResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\MultiPercolateResponse.cs">
+      <Link>Domain\Responses\MultiPercolateResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\MultiSearchResponse.cs">
+      <Link>Domain\Responses\MultiSearchResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\MultiTermVectorResponse.cs">
+      <Link>Domain\Responses\MultiTermVectorResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\NodeInfoResponse.cs">
+      <Link>Domain\Responses\NodeInfoResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\NodesHotThreadsResponse.cs">
+      <Link>Domain\Responses\NodesHotThreadsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\NodesShutDownResponse.cs">
+      <Link>Domain\Responses\NodesShutDownResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\NodeStatsResponse.cs">
+      <Link>Domain\Responses\NodeStatsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\PercolateResponse.cs">
+      <Link>Domain\Responses\PercolateResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\PingResponse.cs">
+      <Link>Domain\Responses\PingResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\PutAliasResponse.cs">
+      <Link>Domain\Responses\PutAliasResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\PutScriptResponse.cs">
+      <Link>Domain\Responses\PutScriptResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\PutSearchTemplateResponse.cs">
+      <Link>Domain\Responses\PutSearchTemplateResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\RecoveryStatusResponse.cs">
+      <Link>Domain\Responses\RecoveryStatusResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\RegisterPercolateResponse.cs">
+      <Link>Domain\Responses\RegisterPercolateResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\ReindexResponse.cs">
+      <Link>Domain\Responses\ReindexResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\RestoreResponse.cs">
+      <Link>Domain\Responses\RestoreResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\RootVersionInfoResponse.cs">
+      <Link>Domain\Responses\RootVersionInfoResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\SearchResponse.cs">
+      <Link>Domain\Responses\SearchResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\SearchShardsResponse.cs">
+      <Link>Domain\Responses\SearchShardsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\SegmentsResponse.cs">
+      <Link>Domain\Responses\SegmentsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\ShardRecovery.cs">
+      <Link>Domain\Responses\ShardRecovery.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\SnapshotResponse.cs">
+      <Link>Domain\Responses\SnapshotResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\SnapshotStatusResponse.cs">
+      <Link>Domain\Responses\SnapshotStatusResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\StatusResponse.cs">
+      <Link>Domain\Responses\StatusResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\SuggestResponse.cs">
+      <Link>Domain\Responses\SuggestResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\TemplateResponse.cs">
+      <Link>Domain\Responses\TemplateResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\TermVectorResponse.cs">
+      <Link>Domain\Responses\TermVectorResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\UnregisterPercolateResponse.cs">
+      <Link>Domain\Responses\UnregisterPercolateResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\UpdateResponse.cs">
+      <Link>Domain\Responses\UpdateResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\UpgradeResponse.cs">
+      <Link>Domain\Responses\UpgradeResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\UpgradeStatusResponse.cs">
+      <Link>Domain\Responses\UpgradeStatusResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\ValidateResponse.cs">
+      <Link>Domain\Responses\ValidateResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\VerifyRepositoryResponse.cs">
+      <Link>Domain\Responses\VerifyRepositoryResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Responses\WarmerResponse.cs">
+      <Link>Domain\Responses\WarmerResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Settings\IndexSettings.cs">
+      <Link>Domain\Settings\IndexSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Similarity\BM25Similarity.cs">
+      <Link>Domain\Similarity\BM25Similarity.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Similarity\DefaultSimilarity.cs">
+      <Link>Domain\Similarity\DefaultSimilarity.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Similarity\DFRSimilarity.cs">
+      <Link>Domain\Similarity\DFRSimilarity.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Similarity\IBSimilarity.cs">
+      <Link>Domain\Similarity\IBSimilarity.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Similarity\LMDirichletSimilarity.cs">
+      <Link>Domain\Similarity\LMDirichletSimilarity.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Similarity\LMJelinekSimilarity.cs">
+      <Link>Domain\Similarity\LMJelinekSimilarity.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Similarity\SimilarityBase.cs">
+      <Link>Domain\Similarity\SimilarityBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Similarity\SimilaritySettings.cs">
+      <Link>Domain\Similarity\SimilaritySettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\State\ClusterState.cs">
+      <Link>Domain\State\ClusterState.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\ClusterNodesStas.cs">
+      <Link>Domain\Stats\ClusterNodesStas.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\CompactNodeInfo.cs">
+      <Link>Domain\Stats\CompactNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\CompletionStats.cs">
+      <Link>Domain\Stats\CompletionStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\DocStats.cs">
+      <Link>Domain\Stats\DocStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\FieldDataStats.cs">
+      <Link>Domain\Stats\FieldDataStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\FilterCacheStats.cs">
+      <Link>Domain\Stats\FilterCacheStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\FlushStats.cs">
+      <Link>Domain\Stats\FlushStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\GetStats.cs">
+      <Link>Domain\Stats\GetStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\IdCacheStats.cs">
+      <Link>Domain\Stats\IdCacheStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\IndexDocStats.cs">
+      <Link>Domain\Stats\IndexDocStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\IndexHealthStats.cs">
+      <Link>Domain\Stats\IndexHealthStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\IndexingStats.cs">
+      <Link>Domain\Stats\IndexingStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\IndexSizeStats.cs">
+      <Link>Domain\Stats\IndexSizeStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\IndicesStats.cs">
+      <Link>Domain\Stats\IndicesStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\MergesStats.cs">
+      <Link>Domain\Stats\MergesStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\NodeInfo.cs">
+      <Link>Domain\Stats\NodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\NodeStats.cs">
+      <Link>Domain\Stats\NodeStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\PercolateStats.cs">
+      <Link>Domain\Stats\PercolateStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\PluginStats.cs">
+      <Link>Domain\Stats\PluginStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\RefreshStats.cs">
+      <Link>Domain\Stats\RefreshStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\SearchStats.cs">
+      <Link>Domain\Stats\SearchStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\SegmentsStats.cs">
+      <Link>Domain\Stats\SegmentsStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\ShardHealthStats.cs">
+      <Link>Domain\Stats\ShardHealthStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\Stats.cs">
+      <Link>Domain\Stats\Stats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\StatsContainer.cs">
+      <Link>Domain\Stats\StatsContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\StoreStats.cs">
+      <Link>Domain\Stats\StoreStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\TranslogStats.cs">
+      <Link>Domain\Stats\TranslogStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Stats\TypeStats.cs">
+      <Link>Domain\Stats\TypeStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Status\IndexStatus.cs">
+      <Link>Domain\Status\IndexStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Status\UpgradeStatus.cs">
+      <Link>Domain\Status\UpgradeStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Suggest\Suggest.cs">
+      <Link>Domain\Suggest\Suggest.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Suggest\SuggestField.cs">
+      <Link>Domain\Suggest\SuggestField.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\Suggest\SuggestOption.cs">
+      <Link>Domain\Suggest\SuggestOption.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\TermVector\FieldStatistics.cs">
+      <Link>Domain\TermVector\FieldStatistics.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\TermVector\MultiTermVectorDocument.cs">
+      <Link>Domain\TermVector\MultiTermVectorDocument.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\TermVector\TermVector.cs">
+      <Link>Domain\TermVector\TermVector.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\TermVector\TermVectorTerm.cs">
+      <Link>Domain\TermVector\TermVectorTerm.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Domain\TermVector\Token.cs">
+      <Link>Domain\TermVector\Token.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\AggregationDescriptor.cs">
+      <Link>DSL\Aggregations\AggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\AverageAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\AverageAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\BucketAggregationBaseDescriptor.cs">
+      <Link>DSL\Aggregations\BucketAggregationBaseDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\CardinalityAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\CardinalityAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\ChildrenAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\ChildrenAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\DateHistogramAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\DateHistogramAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\DateRangeAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\DateRangeAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\ExtendedStatsAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\ExtendedStatsAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\FilterAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\FilterAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\FiltersAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\FiltersAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\GeoBoundsAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\GeoBoundsAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\GeoDistanceAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\GeoDistanceAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\GeoHashAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\GeoHashAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\GlobalAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\GlobalAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\HistogramAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\HistogramAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\IAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\IAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\Ip4RangeAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\Ip4RangeAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\MaxAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\MaxAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\MetricAggregationBaseDescriptor.cs">
+      <Link>DSL\Aggregations\MetricAggregationBaseDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\MinAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\MinAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\MissingAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\MissingAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\NestedAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\NestedAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\PercentileRanksAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\PercentileRanksAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\PercentilesAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\PercentilesAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\RangeAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\RangeAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\ReverseNestedAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\ReverseNestedAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\ScriptedMetricAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\ScriptedMetricAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\SignificantTermsAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\SignificantTermsAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\StatsAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\StatsAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\SumAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\SumAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\TermsAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\TermsAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\TopHitsAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\TopHitsAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Aggregations\ValueCountAggregationDescriptor.cs">
+      <Link>DSL\Aggregations\ValueCountAggregationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\AliasDescriptor.cs">
+      <Link>DSL\AliasDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\AliasExistsDescriptor.cs">
+      <Link>DSL\AliasExistsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\AnalyzeDescriptor.cs">
+      <Link>DSL\AnalyzeDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\BulkDescriptor.cs">
+      <Link>DSL\BulkDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Bulk\BulkCreateDescriptor.cs">
+      <Link>DSL\Bulk\BulkCreateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Bulk\BulkDeleteDescriptor.cs">
+      <Link>DSL\Bulk\BulkDeleteDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Bulk\BulkIndexDescriptor.cs">
+      <Link>DSL\Bulk\BulkIndexDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Bulk\BulkOperationBase.cs">
+      <Link>DSL\Bulk\BulkOperationBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Bulk\BulkUpdateDescriptor.cs">
+      <Link>DSL\Bulk\BulkUpdateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatAliasesDescriptor.cs">
+      <Link>DSL\CatAliasesDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatAllocationDescriptor.cs">
+      <Link>DSL\CatAllocationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatCountDescriptor.cs">
+      <Link>DSL\CatCountDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatFielddataDescriptor.cs">
+      <Link>DSL\CatFielddataDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatHealthDescriptor.cs">
+      <Link>DSL\CatHealthDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatIndicesDescriptor.cs">
+      <Link>DSL\CatIndicesDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatMasterDescriptor.cs">
+      <Link>DSL\CatMasterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatNodesDescriptor.cs">
+      <Link>DSL\CatNodesDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatPendingTasksDescriptor.cs">
+      <Link>DSL\CatPendingTasksDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatPluginsDescriptor.cs">
+      <Link>DSL\CatPluginsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatRecoveryDescriptor.cs">
+      <Link>DSL\CatRecoveryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatShardsDescriptor.cs">
+      <Link>DSL\CatShardsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CatThreadPoolDescriptor.cs">
+      <Link>DSL\CatThreadPoolDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ClearCacheDescriptor.cs">
+      <Link>DSL\ClearCacheDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ClearScrollDescriptor.cs">
+      <Link>DSL\ClearScrollDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CloseIndexDescriptor.cs">
+      <Link>DSL\CloseIndexDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ClusterGetSettingsDescriptor.cs">
+      <Link>DSL\ClusterGetSettingsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ClusterHealthDescriptor.cs">
+      <Link>DSL\ClusterHealthDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ClusterPendingTasksDescriptor.cs">
+      <Link>DSL\ClusterPendingTasksDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ClusterRerouteDescriptor.cs">
+      <Link>DSL\ClusterRerouteDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ClusterSettingsDescriptor.cs">
+      <Link>DSL\ClusterSettingsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ClusterStateDescriptor.cs">
+      <Link>DSL\ClusterStateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ClusterStatsDescriptor.cs">
+      <Link>DSL\ClusterStatsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Cluster\AllocateClusterRerouteCommand.cs">
+      <Link>DSL\Cluster\AllocateClusterRerouteCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Cluster\AllocateClusterRerouteCommandDescriptor.cs">
+      <Link>DSL\Cluster\AllocateClusterRerouteCommandDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Cluster\CancelClusterRerouteCommand.cs">
+      <Link>DSL\Cluster\CancelClusterRerouteCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Cluster\CancelClusterRerouteCommandDescriptor.cs">
+      <Link>DSL\Cluster\CancelClusterRerouteCommandDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Cluster\IClusterRerouteCommand.cs">
+      <Link>DSL\Cluster\IClusterRerouteCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Cluster\MoveClusterRerouteCommand.cs">
+      <Link>DSL\Cluster\MoveClusterRerouteCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Cluster\MoveClusterRerouteCommandDescriptor.cs">
+      <Link>DSL\Cluster\MoveClusterRerouteCommandDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Common\BasePathDescriptor.cs">
+      <Link>DSL\Common\BasePathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Common\BasePathRequest.cs">
+      <Link>DSL\Common\BasePathRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Common\BaseRequest.cs">
+      <Link>DSL\Common\BaseRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Common\IRequest.cs">
+      <Link>DSL\Common\IRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CountDescriptor.cs">
+      <Link>DSL\CountDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CreateIndexDescriptor.cs">
+      <Link>DSL\CreateIndexDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\CreateRepositoryDescriptor.cs">
+      <Link>DSL\CreateRepositoryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DeleteAliasDescriptor.cs">
+      <Link>DSL\DeleteAliasDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DeleteByQueryDescriptor.cs">
+      <Link>DSL\DeleteByQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DeleteDescriptor.cs">
+      <Link>DSL\DeleteDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DeleteIndexDescriptor.cs">
+      <Link>DSL\DeleteIndexDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DeleteMappingDescriptor.cs">
+      <Link>DSL\DeleteMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DeleteRepositoryDescriptor.cs">
+      <Link>DSL\DeleteRepositoryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DeleteScriptDescriptor.cs">
+      <Link>DSL\DeleteScriptDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DeleteSearchTemplateDescriptor.cs">
+      <Link>DSL\DeleteSearchTemplateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DeleteSnapshotDescriptor.cs">
+      <Link>DSL\DeleteSnapshotDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DeleteTemplateDescriptor.cs">
+      <Link>DSL\DeleteTemplateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DeleteWarmerDescriptor.cs">
+      <Link>DSL\DeleteWarmerDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\DocumentExistsDescriptor.cs">
+      <Link>DSL\DocumentExistsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ExplainDescriptor.cs">
+      <Link>DSL\ExplainDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\BaseFacetDescriptor.cs">
+      <Link>DSL\Facets\BaseFacetDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\DateExpressionRange.cs">
+      <Link>DSL\Facets\DateExpressionRange.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\DateHistogramFacetDescriptor.cs">
+      <Link>DSL\Facets\DateHistogramFacetDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\DateInterval.cs">
+      <Link>DSL\Facets\DateInterval.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\DateRounding.cs">
+      <Link>DSL\Facets\DateRounding.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\FacetContainer.cs">
+      <Link>DSL\Facets\FacetContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\FacetRequest.cs">
+      <Link>DSL\Facets\FacetRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\GeoDistanceFacetDescriptor.cs">
+      <Link>DSL\Facets\GeoDistanceFacetDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\HistogramFacetDescriptor.cs">
+      <Link>DSL\Facets\HistogramFacetDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\Ip4Range.cs">
+      <Link>DSL\Facets\Ip4Range.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\Range.cs">
+      <Link>DSL\Facets\Range.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\RangeFacetDescriptor.cs">
+      <Link>DSL\Facets\RangeFacetDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\StatisticalFacetDescriptor.cs">
+      <Link>DSL\Facets\StatisticalFacetDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\TermFacetDescriptor.cs">
+      <Link>DSL\Facets\TermFacetDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\TermsOrder.cs">
+      <Link>DSL\Facets\TermsOrder.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\TermsStatsFacetDescriptor.cs">
+      <Link>DSL\Facets\TermsStatsFacetDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Facets\TermsStatsOrder.cs">
+      <Link>DSL\Facets\TermsStatsOrder.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\AndFilterDescriptor.cs">
+      <Link>DSL\Filter\AndFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\BoolFilterDescriptor.cs">
+      <Link>DSL\Filter\BoolFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\BoolFilterExtensions.cs">
+      <Link>DSL\Filter\BoolFilterExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\ConditionlessFilterDescriptor.cs">
+      <Link>DSL\Filter\ConditionlessFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\ExistsFilterDescriptor.cs">
+      <Link>DSL\Filter\ExistsFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\FilterBase.cs">
+      <Link>DSL\Filter\FilterBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\FilterContainer.cs">
+      <Link>DSL\Filter\FilterContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\FilterDescriptor.cs">
+      <Link>DSL\Filter\FilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoBoundingBoxFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoBoundingBoxFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoDistanceFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoDistanceFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoDistanceRangeFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoDistanceRangeFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoHashCellFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoHashCellFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoIndexedShapeFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoIndexedShapeFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoPolygonFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoPolygonFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoShapeCircleFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoShapeCircleFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoShapeEnvelopeFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoShapeEnvelopeFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoShapeLineStringFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoShapeLineStringFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoShapeMultiLineStringFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoShapeMultiLineStringFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoShapeMultiPointFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoShapeMultiPointFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoShapeMultiPolygonFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoShapeMultiPolygonFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoShapePointFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoShapePointFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\GeoShapePolygonFilterDescriptor.cs">
+      <Link>DSL\Filter\GeoShapePolygonFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\HasChildFilterDescriptor.cs">
+      <Link>DSL\Filter\HasChildFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\HasParentFilterDescriptor.cs">
+      <Link>DSL\Filter\HasParentFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\IdsFilterDescriptor.cs">
+      <Link>DSL\Filter\IdsFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\IFieldNameFilter.cs">
+      <Link>DSL\Filter\IFieldNameFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\IFilter.cs">
+      <Link>DSL\Filter\IFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\IFilterContainer.cs">
+      <Link>DSL\Filter\IFilterContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\IndicesFilterDescriptor.cs">
+      <Link>DSL\Filter\IndicesFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\INotFilter.cs">
+      <Link>DSL\Filter\INotFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\LimitFilterDescriptor.cs">
+      <Link>DSL\Filter\LimitFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\MatchAllFilterDescriptor.cs">
+      <Link>DSL\Filter\MatchAllFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\MissingFilterDescriptor.cs">
+      <Link>DSL\Filter\MissingFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\NestedFilterDescriptor.cs">
+      <Link>DSL\Filter\NestedFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\OrFilterDescriptor.cs">
+      <Link>DSL\Filter\OrFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\PlainFilter.cs">
+      <Link>DSL\Filter\PlainFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\PrefixFilterDescriptor.cs">
+      <Link>DSL\Filter\PrefixFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\QueryFilterDescriptor.cs">
+      <Link>DSL\Filter\QueryFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\RangeFilterDescriptor.cs">
+      <Link>DSL\Filter\RangeFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\RawFilter.cs">
+      <Link>DSL\Filter\RawFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\RegexpFilterDescriptor.cs">
+      <Link>DSL\Filter\RegexpFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\ScriptFilterDescriptor.cs">
+      <Link>DSL\Filter\ScriptFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\TermFilterDescriptor.cs">
+      <Link>DSL\Filter\TermFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\TermsFilterDescriptor.cs">
+      <Link>DSL\Filter\TermsFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\TermsLookupFilterDescriptor.cs">
+      <Link>DSL\Filter\TermsLookupFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Filter\TypeFilterDescriptor.cs">
+      <Link>DSL\Filter\TypeFilterDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\FlushDescriptor.cs">
+      <Link>DSL\FlushDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetAliasDescriptor.cs">
+      <Link>DSL\GetAliasDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetAliasesDescriptor.cs">
+      <Link>DSL\GetAliasesDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetDescriptor.cs">
+      <Link>DSL\GetDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetFieldMappingDescriptor.cs">
+      <Link>DSL\GetFieldMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetIndexDescriptor.cs">
+      <Link>DSL\GetIndexDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetIndexSettingsDescriptor.cs">
+      <Link>DSL\GetIndexSettingsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetMappingDescriptor.cs">
+      <Link>DSL\GetMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetRepositoryDescriptor.cs">
+      <Link>DSL\GetRepositoryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetScriptDescriptor.cs">
+      <Link>DSL\GetScriptDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetSearchTemplateDescriptor.cs">
+      <Link>DSL\GetSearchTemplateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetSnapshotDescriptor.cs">
+      <Link>DSL\GetSnapshotDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetTemplateDescriptor.cs">
+      <Link>DSL\GetTemplateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\GetWarmerDescriptor.cs">
+      <Link>DSL\GetWarmerDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\IndexDescriptor.cs">
+      <Link>DSL\IndexDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\IndexExistsDescriptor.cs">
+      <Link>DSL\IndexExistsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\IndicesStatsDescriptor.cs">
+      <Link>DSL\IndicesStatsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\IndicesStatusDescriptor.cs">
+      <Link>DSL\IndicesStatusDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\InfoDescriptor.cs">
+      <Link>DSL\InfoDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Mapping\AnalysisDescriptor.cs">
+      <Link>DSL\Mapping\AnalysisDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\MoreLikeThisDescriptor.cs">
+      <Link>DSL\MoreLikeThisDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\MultiGetDescriptor.cs">
+      <Link>DSL\MultiGetDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\MultiGet\IMultiGetOperation.cs">
+      <Link>DSL\MultiGet\IMultiGetOperation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\MultiGet\MultiGetDoc.cs">
+      <Link>DSL\MultiGet\MultiGetDoc.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\MultiGet\MultiGetOperationDescriptor.cs">
+      <Link>DSL\MultiGet\MultiGetOperationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\MultiPercolateDescriptor.cs">
+      <Link>DSL\MultiPercolateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\MultiPercolate\IPercolateOperation.cs">
+      <Link>DSL\MultiPercolate\IPercolateOperation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\MultiSearchDescriptor.cs">
+      <Link>DSL\MultiSearchDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\MultiTermVectorsDescriptor.cs">
+      <Link>DSL\MultiTermVectorsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\NodesHotThreadsDescriptor.cs">
+      <Link>DSL\NodesHotThreadsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\NodesInfoDescriptor.cs">
+      <Link>DSL\NodesInfoDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\NodesShutdownDescriptor.cs">
+      <Link>DSL\NodesShutdownDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\NodesStatsDescriptor.cs">
+      <Link>DSL\NodesStatsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\OpenIndexDescriptor.cs">
+      <Link>DSL\OpenIndexDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\OptimizeDescriptor.cs">
+      <Link>DSL\OptimizeDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\DocumentOptionalPathDescriptor.cs">
+      <Link>DSL\Paths\DocumentOptionalPathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\DocumentPathDescriptor.cs">
+      <Link>DSL\Paths\DocumentPathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\FixedIndexTypePathDescriptor.cs">
+      <Link>DSL\Paths\FixedIndexTypePathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\IndexNamePathDescriptor.cs">
+      <Link>DSL\Paths\IndexNamePathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\IndexOptionalNamePathDescriptor.cs">
+      <Link>DSL\Paths\IndexOptionalNamePathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\IndexOptionalPathDescriptor.cs">
+      <Link>DSL\Paths\IndexOptionalPathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\IndexPathDescriptor.cs">
+      <Link>DSL\Paths\IndexPathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\IndexTypePathDescriptor.cs">
+      <Link>DSL\Paths\IndexTypePathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\IndicesOptionalExplicitAllPathDescriptor.cs">
+      <Link>DSL\Paths\IndicesOptionalExplicitAllPathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\IndicesOptionalPathDescriptor.cs">
+      <Link>DSL\Paths\IndicesOptionalPathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\IndicesOptionalTypesNamePathDecriptor.cs">
+      <Link>DSL\Paths\IndicesOptionalTypesNamePathDecriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\IndicesOptionalTypesOptionalFieldPathDecriptor.cs">
+      <Link>DSL\Paths\IndicesOptionalTypesOptionalFieldPathDecriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\IndicesTypePathDescriptor.cs">
+      <Link>DSL\Paths\IndicesTypePathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\NamePathDescriptor.cs">
+      <Link>DSL\Paths\NamePathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\NodeIdOptionalDescriptor.cs">
+      <Link>DSL\Paths\NodeIdOptionalDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\QueryPathDescriptor.cs">
+      <Link>DSL\Paths\QueryPathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\RepositoryOptionalPathDescriptor.cs">
+      <Link>DSL\Paths\RepositoryOptionalPathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\RepositoryPathDescriptor.cs">
+      <Link>DSL\Paths\RepositoryPathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\RepositorySnapshotOptionalPathDescriptor.cs">
+      <Link>DSL\Paths\RepositorySnapshotOptionalPathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Paths\RepositorySnapshotPathDescriptor.cs">
+      <Link>DSL\Paths\RepositorySnapshotPathDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\PercolateCountDescriptor.cs">
+      <Link>DSL\PercolateCountDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\PercolateDescriptor.cs">
+      <Link>DSL\PercolateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\PingDescriptor.cs">
+      <Link>DSL\PingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\PutAliasDescriptor.cs">
+      <Link>DSL\PutAliasDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\PutMappingDescriptor.cs">
+      <Link>DSL\PutMappingDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\PutScriptDescriptor.cs">
+      <Link>DSL\PutScriptDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\PutSearchTemplateDescriptor.cs">
+      <Link>DSL\PutSearchTemplateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\PutTemplateDescriptor.cs">
+      <Link>DSL\PutTemplateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\PutWarmerDescriptor.cs">
+      <Link>DSL\PutWarmerDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Behaviour\IFieldNameQuery.cs">
+      <Link>DSL\Query\Behaviour\IFieldNameQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\BoolQueryDescriptor.cs">
+      <Link>DSL\Query\BoolQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\BoolQueryExtensions.cs">
+      <Link>DSL\Query\BoolQueryExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\BoostingQueryDescriptor.cs">
+      <Link>DSL\Query\BoostingQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\CommonTermsQueryDescriptor.cs">
+      <Link>DSL\Query\CommonTermsQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\ConditionlessQueryDescriptor.cs">
+      <Link>DSL\Query\ConditionlessQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\ConstantScoreQueryDescriptor.cs">
+      <Link>DSL\Query\ConstantScoreQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\CustomBoostFactorQueryDescriptor.cs">
+      <Link>DSL\Query\CustomBoostFactorQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\CustomFiltersScoreQueryDescriptor.cs">
+      <Link>DSL\Query\CustomFiltersScoreQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\CustomScoreQueryDescriptor.cs">
+      <Link>DSL\Query\CustomScoreQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\DismaxQueryDescriptor.cs">
+      <Link>DSL\Query\DismaxQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\FilteredQueryDescriptor.cs">
+      <Link>DSL\Query\FilteredQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\FilterScoreQueryDescriptor.cs">
+      <Link>DSL\Query\FilterScoreQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\FunctionScoreQueryDescriptor.cs">
+      <Link>DSL\Query\FunctionScoreQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\BoostFactorFunction.cs">
+      <Link>DSL\Query\Functions\BoostFactorFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\ExpFunction.cs">
+      <Link>DSL\Query\Functions\ExpFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\FieldValueFactorDescriptor.cs">
+      <Link>DSL\Query\Functions\FieldValueFactorDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\FieldValueFactorModifier.cs">
+      <Link>DSL\Query\Functions\FieldValueFactorModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\FunctionBoostMode.cs">
+      <Link>DSL\Query\Functions\FunctionBoostMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\FunctionScoreDecayFieldDescriptor.cs">
+      <Link>DSL\Query\Functions\FunctionScoreDecayFieldDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\FunctionScoreDecayFunction.cs">
+      <Link>DSL\Query\Functions\FunctionScoreDecayFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\FunctionScoreFunctionsDescriptor.cs">
+      <Link>DSL\Query\Functions\FunctionScoreFunctionsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\FunctionScoreMode.cs">
+      <Link>DSL\Query\Functions\FunctionScoreMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\GaussFunction.cs">
+      <Link>DSL\Query\Functions\GaussFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\IFunctionScoreFunction.cs">
+      <Link>DSL\Query\Functions\IFunctionScoreFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\LinearFunction.cs">
+      <Link>DSL\Query\Functions\LinearFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\RandomScoreFunction.cs">
+      <Link>DSL\Query\Functions\RandomScoreFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\ScriptScoreFunction.cs">
+      <Link>DSL\Query\Functions\ScriptScoreFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\Functions\WeightFunction.cs">
+      <Link>DSL\Query\Functions\WeightFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\FuzzyDateQueryDescriptor.cs">
+      <Link>DSL\Query\FuzzyDateQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\FuzzyLikeThisQueryDescriptor.cs">
+      <Link>DSL\Query\FuzzyLikeThisQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\FuzzyNumericQueryDescriptor.cs">
+      <Link>DSL\Query\FuzzyNumericQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\FuzzyQueryDescriptor.cs">
+      <Link>DSL\Query\FuzzyQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\GeoShapeCircleQueryDescriptor.cs">
+      <Link>DSL\Query\GeoShapeCircleQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\GeoShapeEnvelopeQueryDescriptor.cs">
+      <Link>DSL\Query\GeoShapeEnvelopeQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\GeoShapeLineStringQueryDescriptor.cs">
+      <Link>DSL\Query\GeoShapeLineStringQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\GeoShapeMultiLineStringQueryDescriptor.cs">
+      <Link>DSL\Query\GeoShapeMultiLineStringQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\GeoShapeMultiPointQueryDescriptor.cs">
+      <Link>DSL\Query\GeoShapeMultiPointQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\GeoShapeMultiPolygonQueryDescriptor.cs">
+      <Link>DSL\Query\GeoShapeMultiPolygonQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\GeoShapePointQueryDescriptor.cs">
+      <Link>DSL\Query\GeoShapePointQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\GeoShapePolygonQueryDescriptor.cs">
+      <Link>DSL\Query\GeoShapePolygonQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\HasChildQueryDescriptor.cs">
+      <Link>DSL\Query\HasChildQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\HasParentQueryDescriptor.cs">
+      <Link>DSL\Query\HasParentQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\IdsQueryDescriptor.cs">
+      <Link>DSL\Query\IdsQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\IndicesQueryDescriptor.cs">
+      <Link>DSL\Query\IndicesQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\IQuery.cs">
+      <Link>DSL\Query\IQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\IQueryContainer.cs">
+      <Link>DSL\Query\IQueryContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\MatchAllQuery.cs">
+      <Link>DSL\Query\MatchAllQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\MatchPhrasePrefixQueryDescriptor.cs">
+      <Link>DSL\Query\MatchPhrasePrefixQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\MatchPhraseQueryDescriptor.cs">
+      <Link>DSL\Query\MatchPhraseQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\MatchQueryDescriptor.cs">
+      <Link>DSL\Query\MatchQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\MoreLikeThisQueryDescriptor.cs">
+      <Link>DSL\Query\MoreLikeThisQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\MultiMatchQueryDescriptor.cs">
+      <Link>DSL\Query\MultiMatchQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\NestedQueryDescriptor.cs">
+      <Link>DSL\Query\NestedQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\PlainQuery.cs">
+      <Link>DSL\Query\PlainQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\PrefixQueryDescriptor.cs">
+      <Link>DSL\Query\PrefixQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\QueryContainer.cs">
+      <Link>DSL\Query\QueryContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\QueryDescriptor.cs">
+      <Link>DSL\Query\QueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\QueryStringDescriptor.cs">
+      <Link>DSL\Query\QueryStringDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\RangeQueryDescriptor.cs">
+      <Link>DSL\Query\RangeQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\RegexpQueryDescriptor.cs">
+      <Link>DSL\Query\RegexpQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SimpleQueryStringQueryDescriptor.cs">
+      <Link>DSL\Query\SimpleQueryStringQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SpanFirstQueryDescriptor.cs">
+      <Link>DSL\Query\SpanFirstQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SpanMultiTermQueryDescriptor.cs">
+      <Link>DSL\Query\SpanMultiTermQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SpanNearQueryDescriptor.cs">
+      <Link>DSL\Query\SpanNearQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SpanNotQueryDescriptor.cs">
+      <Link>DSL\Query\SpanNotQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SpanOrQueryDescriptor.cs">
+      <Link>DSL\Query\SpanOrQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SpanQueryDescriptor.cs">
+      <Link>DSL\Query\SpanQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SpanTermQueryDescriptor.cs">
+      <Link>DSL\Query\SpanTermQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SubDescriptors\ExternalFieldDeclaration.cs">
+      <Link>DSL\Query\SubDescriptors\ExternalFieldDeclaration.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SubDescriptors\ExternalFieldDeclarationDescriptor.cs">
+      <Link>DSL\Query\SubDescriptors\ExternalFieldDeclarationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SubDescriptors\IExternalFieldDeclaration.cs">
+      <Link>DSL\Query\SubDescriptors\IExternalFieldDeclaration.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SubDescriptors\ISpanSubQuery.cs">
+      <Link>DSL\Query\SubDescriptors\ISpanSubQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\SubDescriptors\MoreLikeThisQueryDocumentsDescriptor.cs">
+      <Link>DSL\Query\SubDescriptors\MoreLikeThisQueryDocumentsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\TemplateQueryDescriptor.cs">
+      <Link>DSL\Query\TemplateQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\TermQueryDescriptor.cs">
+      <Link>DSL\Query\TermQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\TermsQueryDescriptor.cs">
+      <Link>DSL\Query\TermsQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\TopChildrenQueryDescriptor.cs">
+      <Link>DSL\Query\TopChildrenQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Query\WildcardQueryDescriptor.cs">
+      <Link>DSL\Query\WildcardQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\RecoveryStatusDescriptor.cs">
+      <Link>DSL\RecoveryStatusDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\RefreshDescriptor.cs">
+      <Link>DSL\RefreshDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\RegisterPercolatorDescriptor.cs">
+      <Link>DSL\RegisterPercolatorDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Reindex\ReindexDescriptor.cs">
+      <Link>DSL\Reindex\ReindexDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Repository\AzureRepositoryDescriptor.cs">
+      <Link>DSL\Repository\AzureRepositoryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Repository\FileSystemRepositoryDescriptor.cs">
+      <Link>DSL\Repository\FileSystemRepositoryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Repository\HdfsRepositoryDescriptor.cs">
+      <Link>DSL\Repository\HdfsRepositoryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Repository\ReadOnlyUrlRepositoryDescriptor.cs">
+      <Link>DSL\Repository\ReadOnlyUrlRepositoryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Repository\S3RepositoryDescriptor.cs">
+      <Link>DSL\Repository\S3RepositoryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Rescore\RescoreDescriptor.cs">
+      <Link>DSL\Rescore\RescoreDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Rescore\RescoreQueryDescriptor.cs">
+      <Link>DSL\Rescore\RescoreQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\RestoreDescriptor.cs">
+      <Link>DSL\RestoreDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ScrollDescriptor.cs">
+      <Link>DSL\ScrollDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\SearchDescriptor.cs">
+      <Link>DSL\SearchDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\SearchExistsDescriptor.cs">
+      <Link>DSL\SearchExistsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\SearchShardsDescriptor.cs">
+      <Link>DSL\SearchShardsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\SearchTemplateDescriptor.cs">
+      <Link>DSL\SearchTemplateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Search\HighlightDescriptor.cs">
+      <Link>DSL\Search\HighlightDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Search\HighlightFieldDescriptor.cs">
+      <Link>DSL\Search\HighlightFieldDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Search\SearchSourceDescriptor.cs">
+      <Link>DSL\Search\SearchSourceDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Search\SortFieldDescriptor.cs">
+      <Link>DSL\Search\SortFieldDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Search\SortGeoDistanceDescriptor.cs">
+      <Link>DSL\Search\SortGeoDistanceDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Search\SortScriptDescriptor.cs">
+      <Link>DSL\Search\SortScriptDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\SegmentsDescriptor.cs">
+      <Link>DSL\SegmentsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\SimilarityDescriptor.cs">
+      <Link>DSL\SimilarityDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\SnapshotDescriptor.cs">
+      <Link>DSL\SnapshotDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\SnapshotStatusDescriptor.cs">
+      <Link>DSL\SnapshotStatusDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\SourceDescriptor.cs">
+      <Link>DSL\SourceDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\SuggestDescriptor.cs">
+      <Link>DSL\SuggestDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\BaseSuggestDescriptor.cs">
+      <Link>DSL\Suggest\BaseSuggestDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\CompletionSuggestDescriptor.cs">
+      <Link>DSL\Suggest\CompletionSuggestDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\Context\CategorySuggestDescriptor.cs">
+      <Link>DSL\Suggest\Context\CategorySuggestDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\Context\GeoLocationSuggestDescriptor.cs">
+      <Link>DSL\Suggest\Context\GeoLocationSuggestDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\Context\ISuggestContext.cs">
+      <Link>DSL\Suggest\Context\ISuggestContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\DirectGeneratorDescriptor.cs">
+      <Link>DSL\Suggest\DirectGeneratorDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\Fuzziness.cs">
+      <Link>DSL\Suggest\Fuzziness.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\FuzzySuggestDescriptor.cs">
+      <Link>DSL\Suggest\FuzzySuggestDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\IFuzziness.cs">
+      <Link>DSL\Suggest\IFuzziness.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\PhraseSuggestCollateDescriptor.cs">
+      <Link>DSL\Suggest\PhraseSuggestCollateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\PhraseSuggestDescriptor.cs">
+      <Link>DSL\Suggest\PhraseSuggestDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\PhraseSuggestHighlightDescriptor.cs">
+      <Link>DSL\Suggest\PhraseSuggestHighlightDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\SuggestBucket.cs">
+      <Link>DSL\Suggest\SuggestBucket.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Suggest\TermSuggestDescriptor.cs">
+      <Link>DSL\Suggest\TermSuggestDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\TemplateExistsDescriptor.cs">
+      <Link>DSL\TemplateExistsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\TermVectorDescriptor.cs">
+      <Link>DSL\TermVectorDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\TermVector\IMultiTermVectorDocumentDescriptor.cs">
+      <Link>DSL\TermVector\IMultiTermVectorDocumentDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\TermVector\MultiTermVectorDocumentDescriptor.cs">
+      <Link>DSL\TermVector\MultiTermVectorDocumentDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\TypeExistsDescriptor.cs">
+      <Link>DSL\TypeExistsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\UnregisterPercolatorDescriptor.cs">
+      <Link>DSL\UnregisterPercolatorDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\UpdateDescriptor.cs">
+      <Link>DSL\UpdateDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\UpdateSettingsDescriptor.cs">
+      <Link>DSL\UpdateSettingsDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\UpgradeDescriptor.cs">
+      <Link>DSL\UpgradeDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\UpgradeStatusDescriptor.cs">
+      <Link>DSL\UpgradeStatusDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\ValidateQueryDescriptor.cs">
+      <Link>DSL\ValidateQueryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\VerifyRepositoryDescriptor.cs">
+      <Link>DSL\VerifyRepositoryDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Visitor\DslPrettyPrintVisitor.cs">
+      <Link>DSL\Visitor\DslPrettyPrintVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Visitor\IMappingVisitor.cs">
+      <Link>DSL\Visitor\IMappingVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Visitor\MappingWalker.cs">
+      <Link>DSL\Visitor\MappingWalker.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Visitor\QueryFilterWalker.cs">
+      <Link>DSL\Visitor\QueryFilterWalker.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Visitor\QueryVisitor.cs">
+      <Link>DSL\Visitor\QueryVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Visitor\VisitorScope.cs">
+      <Link>DSL\Visitor\VisitorScope.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\Warmers\CreateWarmerDescriptor.cs">
+      <Link>DSL\Warmers\CreateWarmerDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\_Descriptors.generated.cs">
+      <Link>DSL\_Descriptors.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\DSL\_Requests.generated.cs">
+      <Link>DSL\_Requests.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Aliases.cs">
+      <Link>ElasticClient-Aliases.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-AliasExists.cs">
+      <Link>ElasticClient-AliasExists.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Analyze.cs">
+      <Link>ElasticClient-Analyze.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Bulk.cs">
+      <Link>ElasticClient-Bulk.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Cat.cs">
+      <Link>ElasticClient-Cat.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-ClearCache.cs">
+      <Link>ElasticClient-ClearCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-ClusterHealth.cs">
+      <Link>ElasticClient-ClusterHealth.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-ClusterPendingTasks.cs">
+      <Link>ElasticClient-ClusterPendingTasks.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-ClusterReroute.cs">
+      <Link>ElasticClient-ClusterReroute.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-ClusterSettings.cs">
+      <Link>ElasticClient-ClusterSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-ClusterState.cs">
+      <Link>ElasticClient-ClusterState.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-ClusterStats.cs">
+      <Link>ElasticClient-ClusterStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Count.cs">
+      <Link>ElasticClient-Count.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-CreateIndex.cs">
+      <Link>ElasticClient-CreateIndex.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Delete.cs">
+      <Link>ElasticClient-Delete.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-DeleteByQuery.cs">
+      <Link>ElasticClient-DeleteByQuery.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-DeleteIndex.cs">
+      <Link>ElasticClient-DeleteIndex.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-DoRequest.cs">
+      <Link>ElasticClient-DoRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Exists.cs">
+      <Link>ElasticClient-Exists.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Explain.cs">
+      <Link>ElasticClient-Explain.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Flush.cs">
+      <Link>ElasticClient-Flush.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Get.cs">
+      <Link>ElasticClient-Get.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-GetIndex.cs">
+      <Link>ElasticClient-GetIndex.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Index.cs">
+      <Link>ElasticClient-Index.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-IndexExists.cs">
+      <Link>ElasticClient-IndexExists.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-IndexSettings.cs">
+      <Link>ElasticClient-IndexSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-IndicesStats.cs">
+      <Link>ElasticClient-IndicesStats.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-MappingDelete.cs">
+      <Link>ElasticClient-MappingDelete.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-MappingGet.cs">
+      <Link>ElasticClient-MappingGet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-MappingGetField.cs">
+      <Link>ElasticClient-MappingGetField.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-MappingType.cs">
+      <Link>ElasticClient-MappingType.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-MoreLikeThis.cs">
+      <Link>ElasticClient-MoreLikeThis.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-MultiGet.cs">
+      <Link>ElasticClient-MultiGet.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-MultiPercolate.cs">
+      <Link>ElasticClient-MultiPercolate.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-MultiSearch.cs">
+      <Link>ElasticClient-MultiSearch.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-MultiTermVectors.cs">
+      <Link>ElasticClient-MultiTermVectors.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Nodes.cs">
+      <Link>ElasticClient-Nodes.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-OpenClose.cs">
+      <Link>ElasticClient-OpenClose.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Optimize.cs">
+      <Link>ElasticClient-Optimize.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Percolate.cs">
+      <Link>ElasticClient-Percolate.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Ping.cs">
+      <Link>ElasticClient-Ping.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-RecoveryStatus.cs">
+      <Link>ElasticClient-RecoveryStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Refresh.cs">
+      <Link>ElasticClient-Refresh.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Reindex.cs">
+      <Link>ElasticClient-Reindex.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Repository.cs">
+      <Link>ElasticClient-Repository.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Restore.cs">
+      <Link>ElasticClient-Restore.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-RootNodeInfo.cs">
+      <Link>ElasticClient-RootNodeInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Scripts.cs">
+      <Link>ElasticClient-Scripts.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Scroll.cs">
+      <Link>ElasticClient-Scroll.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Search.cs">
+      <Link>ElasticClient-Search.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-SearchExists.cs">
+      <Link>ElasticClient-SearchExists.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-SearchShards.cs">
+      <Link>ElasticClient-SearchShards.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-SearchTemplate.cs">
+      <Link>ElasticClient-SearchTemplate.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Segments.cs">
+      <Link>ElasticClient-Segments.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Snapshot.cs">
+      <Link>ElasticClient-Snapshot.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Source.cs">
+      <Link>ElasticClient-Source.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Status.cs">
+      <Link>ElasticClient-Status.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Suggest.cs">
+      <Link>ElasticClient-Suggest.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Template.cs">
+      <Link>ElasticClient-Template.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-TemplateExists.cs">
+      <Link>ElasticClient-TemplateExists.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-TermVector.cs">
+      <Link>ElasticClient-TermVector.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-TypeExists.cs">
+      <Link>ElasticClient-TypeExists.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Update.cs">
+      <Link>ElasticClient-Update.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-UpdateSettings.cs">
+      <Link>ElasticClient-UpdateSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Upgrade.cs">
+      <Link>ElasticClient-Upgrade.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Validate.cs">
+      <Link>ElasticClient-Validate.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient-Warmers.cs">
+      <Link>ElasticClient-Warmers.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ElasticClient.cs">
+      <Link>ElasticClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\DynamicMappingOption.cs">
+      <Link>Enums\DynamicMappingOption.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\FieldDataLoading.cs">
+      <Link>Enums\FieldDataLoading.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\FieldDataNonStringFormat.cs">
+      <Link>Enums\FieldDataNonStringFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\FieldDataStringFormat.cs">
+      <Link>Enums\FieldDataStringFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\FieldIndexOption.cs">
+      <Link>Enums\FieldIndexOption.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\FieldType.cs">
+      <Link>Enums\FieldType.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\GeoDistance.cs">
+      <Link>Enums\GeoDistance.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\GeoExecution.cs">
+      <Link>Enums\GeoExecution.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\GeoHashPrecision.cs">
+      <Link>Enums\GeoHashPrecision.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\GeoOptimizeBBox.cs">
+      <Link>Enums\GeoOptimizeBBox.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\GeoOrientation.cs">
+      <Link>Enums\GeoOrientation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\GeoPrecisionUnit.cs">
+      <Link>Enums\GeoPrecisionUnit.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\GeoShapeRelation.cs">
+      <Link>Enums\GeoShapeRelation.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\GeoTree.cs">
+      <Link>Enums\GeoTree.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\GeoUnit.cs">
+      <Link>Enums\GeoUnit.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\GetIndexFeature.cs">
+      <Link>Enums\GetIndexFeature.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\HighlighterType.cs">
+      <Link>Enums\HighlighterType.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\IndexOptions.cs">
+      <Link>Enums\IndexOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\NestedScore.cs">
+      <Link>Enums\NestedScore.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\NormsLoading.cs">
+      <Link>Enums\NormsLoading.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\NumericIndexOption.cs">
+      <Link>Enums\NumericIndexOption.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\NumericType.cs">
+      <Link>Enums\NumericType.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\Operator.cs">
+      <Link>Enums\Operator.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\RangeExecution.cs">
+      <Link>Enums\RangeExecution.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\RewriteMultiTerm.cs">
+      <Link>Enums\RewriteMultiTerm.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\RoutingAllocationEnableOption.cs">
+      <Link>Enums\RoutingAllocationEnableOption.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\ScoreMode.cs">
+      <Link>Enums\ScoreMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\ScriptLang.cs">
+      <Link>Enums\ScriptLang.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\TermsAggregationCollectMode.cs">
+      <Link>Enums\TermsAggregationCollectMode.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\TermsAggregationExecutionHint.cs">
+      <Link>Enums\TermsAggregationExecutionHint.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\TermsExecution.cs">
+      <Link>Enums\TermsExecution.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\TermVectorOption.cs">
+      <Link>Enums\TermVectorOption.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\TextQueryType.cs">
+      <Link>Enums\TextQueryType.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Enums\TopChildrenScore.cs">
+      <Link>Enums\TopChildrenScore.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Exception\DispatchException.cs">
+      <Link>Exception\DispatchException.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Exception\DslException.cs">
+      <Link>Exception\DslException.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Exception\ReindexException.cs">
+      <Link>Exception\ReindexException.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Exception\RestoreException.cs">
+      <Link>Exception\RestoreException.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Exception\SnapshotException.cs">
+      <Link>Exception\SnapshotException.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ExposedInternals\ElasticInferrer.cs">
+      <Link>ExposedInternals\ElasticInferrer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ExposedInternals\INestSerializer.cs">
+      <Link>ExposedInternals\INestSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ExposedInternals\JsonConverterPiggyBackState.cs">
+      <Link>ExposedInternals\JsonConverterPiggyBackState.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\ExposedInternals\NestSerializer.cs">
+      <Link>ExposedInternals\NestSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Extensions\Extensions.cs">
+      <Link>Extensions\Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Extensions\StringExtensions.cs">
+      <Link>Extensions\StringExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Extensions\SuffixExtensions.cs">
+      <Link>Extensions\SuffixExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Extensions\TypeExtensions.cs">
+      <Link>Extensions\TypeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Extensions\UriExtensions.cs">
+      <Link>Extensions\UriExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\IElasticClient.cs">
+      <Link>IElasticClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Obsolete\Obsolete.cs">
+      <Link>Obsolete\Obsolete.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\RawDispatch.cs">
+      <Link>RawDispatch.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\RawDispatch.generated.cs">
+      <Link>RawDispatch.generated.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Aggregations\AggregationConverter.cs">
+      <Link>Resolvers\Converters\Aggregations\AggregationConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Aggregations\FilterAggregatorConverter.cs">
+      <Link>Resolvers\Converters\Aggregations\FilterAggregatorConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Aggregations\FiltersAggregatorConverter.cs">
+      <Link>Resolvers\Converters\Aggregations\FiltersAggregatorConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\AnalysisSettingsConverter.cs">
+      <Link>Resolvers\Converters\AnalysisSettingsConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\AnalyzerCollectionConverter.cs">
+      <Link>Resolvers\Converters\AnalyzerCollectionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\BulkOperationResponseItemConverter.cs">
+      <Link>Resolvers\Converters\BulkOperationResponseItemConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\CatFielddataRecordConverter.cs">
+      <Link>Resolvers\Converters\CatFielddataRecordConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\CatThreadPoolRecordConverter.cs">
+      <Link>Resolvers\Converters\CatThreadPoolRecordConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\CharFilterCollectionConverter.cs">
+      <Link>Resolvers\Converters\CharFilterCollectionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\ClusterRerouteCommandCollectionConverter.cs">
+      <Link>Resolvers\Converters\ClusterRerouteCommandCollectionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\CompositeJsonConverter.cs">
+      <Link>Resolvers\Converters\CompositeJsonConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\ConcreteTypeConverter.cs">
+      <Link>Resolvers\Converters\ConcreteTypeConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\CustomJsonConverter.cs">
+      <Link>Resolvers\Converters\CustomJsonConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\DictionaryKeysAreNotPropertyNamesJsonConverter.cs">
+      <Link>Resolvers\Converters\DictionaryKeysAreNotPropertyNamesJsonConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\DynamicMappingOptionConverter.cs">
+      <Link>Resolvers\Converters\DynamicMappingOptionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\DynamicTemplatesConverter.cs">
+      <Link>Resolvers\Converters\DynamicTemplatesConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\ElasticCoreTypeConverter.cs">
+      <Link>Resolvers\Converters\ElasticCoreTypeConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\ElasticTypeConverter.cs">
+      <Link>Resolvers\Converters\ElasticTypeConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\FacetConverter.cs">
+      <Link>Resolvers\Converters\FacetConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\FieldNameFilterConverter.cs">
+      <Link>Resolvers\Converters\FieldNameFilterConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\FieldNameQueryConverter.cs">
+      <Link>Resolvers\Converters\FieldNameQueryConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Filters\GeoBoundingFilterConverter.cs">
+      <Link>Resolvers\Converters\Filters\GeoBoundingFilterConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Filters\GeoDistanceFilterConverter.cs">
+      <Link>Resolvers\Converters\Filters\GeoDistanceFilterConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Filters\GeoDistanceRangeFilterConverter.cs">
+      <Link>Resolvers\Converters\Filters\GeoDistanceRangeFilterConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Filters\GeoPolygonFilterJsonReader.cs">
+      <Link>Resolvers\Converters\Filters\GeoPolygonFilterJsonReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Filters\GeoShapeFilterJsonReader.cs">
+      <Link>Resolvers\Converters\Filters\GeoShapeFilterJsonReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Filters\PrefixFilterConverter.cs">
+      <Link>Resolvers\Converters\Filters\PrefixFilterConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Filters\RangeFilterJsonConverter.cs">
+      <Link>Resolvers\Converters\Filters\RangeFilterJsonConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Filters\RegexpFilterJsonReader.cs">
+      <Link>Resolvers\Converters\Filters\RegexpFilterJsonReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Filters\TermFilterConverter.cs">
+      <Link>Resolvers\Converters\Filters\TermFilterConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Filters\TermsFilterConverter.cs">
+      <Link>Resolvers\Converters\Filters\TermsFilterConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\FuzzinessConverter.cs">
+      <Link>Resolvers\Converters\FuzzinessConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\GeoHashCellFilterConverter.cs">
+      <Link>Resolvers\Converters\GeoHashCellFilterConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\GeoPrecisionConverter.cs">
+      <Link>Resolvers\Converters\GeoPrecisionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\GeoShapeConverterBase.cs">
+      <Link>Resolvers\Converters\GeoShapeConverterBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\GetRepositoryResponseConverter.cs">
+      <Link>Resolvers\Converters\GetRepositoryResponseConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\IndexNameMarkerConverter.cs">
+      <Link>Resolvers\Converters\IndexNameMarkerConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\IndexSettingsConverter.cs">
+      <Link>Resolvers\Converters\IndexSettingsConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\IndexSettingsResponseConverter.cs">
+      <Link>Resolvers\Converters\IndexSettingsResponseConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\MappingTransformConverter.cs">
+      <Link>Resolvers\Converters\MappingTransformConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\MultiGetHitConverter.cs">
+      <Link>Resolvers\Converters\MultiGetHitConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\MultiSearchConverter.cs">
+      <Link>Resolvers\Converters\MultiSearchConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\PropertyPathMarkerConverter.cs">
+      <Link>Resolvers\Converters\PropertyPathMarkerConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Queries\FuzzyQueryJsonConverter.cs">
+      <Link>Resolvers\Converters\Queries\FuzzyQueryJsonConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Queries\GeoShapeQueryJsonReader.cs">
+      <Link>Resolvers\Converters\Queries\GeoShapeQueryJsonReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Queries\MatchQueryJsonConverter.cs">
+      <Link>Resolvers\Converters\Queries\MatchQueryJsonConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Queries\SpanTermQueryConverter.cs">
+      <Link>Resolvers\Converters\Queries\SpanTermQueryConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\Queries\TermsQueryJsonConverter.cs">
+      <Link>Resolvers\Converters\Queries\TermsQueryJsonConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\ReadAsTypeConverter.cs">
+      <Link>Resolvers\Converters\ReadAsTypeConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\ShardsSegmentConverter.cs">
+      <Link>Resolvers\Converters\ShardsSegmentConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\SimilarityCollectionConverter.cs">
+      <Link>Resolvers\Converters\SimilarityCollectionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\SimilaritySettingsConverter.cs">
+      <Link>Resolvers\Converters\SimilaritySettingsConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\SortCollectionConverter.cs">
+      <Link>Resolvers\Converters\SortCollectionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\SuggestResponseConverter.cs">
+      <Link>Resolvers\Converters\SuggestResponseConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\TokenFilterCollectionConverter.cs">
+      <Link>Resolvers\Converters\TokenFilterCollectionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\TokenizerCollectionConverter.cs">
+      <Link>Resolvers\Converters\TokenizerCollectionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\TypeNameMarkerConverter.cs">
+      <Link>Resolvers\Converters\TypeNameMarkerConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\UnixDateTimeConverter.cs">
+      <Link>Resolvers\Converters\UnixDateTimeConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\UriJsonConverter.cs">
+      <Link>Resolvers\Converters\UriJsonConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\WarmerMappingConverter.cs">
+      <Link>Resolvers\Converters\WarmerMappingConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Converters\YesNoBoolConverter.cs">
+      <Link>Resolvers\Converters\YesNoBoolConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\ElasticContractResolver.cs">
+      <Link>Resolvers\ElasticContractResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\ExpressionVisitor.cs">
+      <Link>Resolvers\ExpressionVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\IdResolver.cs">
+      <Link>Resolvers\IdResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\IndexNameMarkerExtensions.cs">
+      <Link>Resolvers\IndexNameMarkerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\IndexNameResolver.cs">
+      <Link>Resolvers\IndexNameResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Inflector.cs">
+      <Link>Resolvers\Inflector.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\PropertyNameResolver.cs">
+      <Link>Resolvers\PropertyNameResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\SettingsContractResolver.cs">
+      <Link>Resolvers\SettingsContractResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\TypeNameMarkerExtensions.cs">
+      <Link>Resolvers\TypeNameMarkerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\TypeNameResolver.cs">
+      <Link>Resolvers\TypeNameResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Writers\TypeMappingWriter.cs">
+      <Link>Resolvers\Writers\TypeMappingWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Nest\Resolvers\Writers\WritePropertiesFromAttributeVisitor.cs">
+      <Link>Resolvers\Writers\WritePropertiesFromAttributeVisitor.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elasticsearch.Net_PCL\Elasticsearch.Net_PCL.csproj">
+      <Project>{62500ba0-d853-49f1-88c0-4fa1b618aa76}</Project>
+      <Name>Elasticsearch.Net_PCL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

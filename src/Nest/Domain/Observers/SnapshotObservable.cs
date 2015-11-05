@@ -63,7 +63,13 @@ namespace Nest
 				_snapshotStatusHumbleObject.Completed += onCompleted;
 				_snapshotStatusHumbleObject.Error += onError;
 
-				_timer = new Timer(Snapshot, observer, (long)_interval.TotalMilliseconds, Timeout.Infinite);
+#if NETFXCORE
+                var dueTime = (int)_interval.TotalMilliseconds; // probable overflow
+#else
+                var dueTime = (long)_interval.TotalMilliseconds;
+#endif
+
+                _timer = new Timer(Snapshot, observer, dueTime, Timeout.Infinite);
 			}
 			catch (Exception exception)
 			{
@@ -86,7 +92,13 @@ namespace Nest
 
 				_snapshotStatusHumbleObject.CheckStatus();
 
-				_timer.Change(Math.Max(0, (long)_interval.TotalMilliseconds - watch.ElapsedMilliseconds), Timeout.Infinite);
+#if NETFXCORE
+                var msec = (int)((long)_interval.TotalMilliseconds - watch.ElapsedMilliseconds); // probable overflow
+#else
+                var msec = (long)_interval.TotalMilliseconds - watch.ElapsedMilliseconds;
+#endif
+
+                _timer.Change(Math.Max(0, msec), Timeout.Infinite);
 			}
 			catch (Exception exception)
 			{

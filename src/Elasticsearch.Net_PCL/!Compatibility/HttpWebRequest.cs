@@ -61,5 +61,15 @@ namespace System.Net
         {
             throw new NotImplementedException();
         }
+
+        internal Task<Stream> GetRequestStreamAsync(CancellationToken token)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal Task<HttpWebResponse> GetResponseAsync(CancellationToken token)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

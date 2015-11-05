@@ -5,7 +5,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography;
+//using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -335,10 +335,27 @@ namespace Elasticsearch.Net.Connection
 
             if (data != null)
             {
+#if NETFXCORE
+                var getRequestStream = Task.Run(async () =>
+                {
+                    using (var cts = new CancellationTokenSource(timeout))
+                    {
+                        var token = cts.Token;
+                        token.Register(() => ThreadTimeoutCallback(request, true));
+                        try
+                        {
+                            return await request.GetRequestStreamAsync(cts.Token);
+                        }
+                        catch (TaskCanceledException) { throw new TimeoutException(); } // TODO: probably not needed
+                    }
+                });
+
+                yield return getRequestStream;
+#else
                 var getRequestStream = Task.Factory.FromAsync<Stream>(request.BeginGetRequestStream, request.EndGetRequestStream, null);
 				ThreadPool.RegisterWaitForSingleObject((getRequestStream as IAsyncResult).AsyncWaitHandle, ThreadTimeoutCallback, request, timeout, true);
                 yield return getRequestStream;
-//#endif
+#endif
 
 
                 var requestStream = getRequestStream.Result;
@@ -374,12 +391,28 @@ namespace Elasticsearch.Net.Connection
 				}
 			}
 
-			// Get the response
-			var getResponse = Task.Factory.FromAsync<WebResponse>(request.BeginGetResponse, request.EndGetResponse, null);
+#if NETFXCORE
+            var getResponse = Task.Run(async () =>
+            {
+                using (var cts = new CancellationTokenSource(timeout))
+                {
+                    var token = cts.Token;
+                    token.Register(() => ThreadTimeoutCallback(request, true));
+                    try
+                    {
+                        return await request.GetResponseAsync(cts.Token);
+                    }
+                    catch (TaskCanceledException) { throw new TimeoutException(); } // TODO: probably not needed
+                }
+            });
+#else
+            // Get the response
+            var getResponse = Task.Factory.FromAsync<WebResponse>(request.BeginGetResponse, request.EndGetResponse, null);
 			ThreadPool.RegisterWaitForSingleObject((getResponse as IAsyncResult).AsyncWaitHandle, ThreadTimeoutCallback, request, timeout, true);
 			yield return getResponse;
+#endif
 
-			var path = request.RequestUri.ToString();
+            var path = request.RequestUri.ToString();
 			var method = request.Method;
 
 			//http://msdn.microsoft.com/en-us/library/system.net.httpwebresponse.getresponsestream.aspx

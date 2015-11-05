@@ -40,5 +40,10 @@ public static class TypeExtensions
         TypeCode result;
         return _typeCodeTable.TryGetValue(type, out result) ? result : TypeCode.Object;
     }
+
+    public static FieldInfo GetField(this Type type, string name)
+    {
+        return type.GetTypeInfo().GetDeclaredField(name);
+    }
 }
 

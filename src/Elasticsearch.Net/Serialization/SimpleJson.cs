@@ -1580,7 +1580,7 @@ namespace Elasticsearch.Net.Serialization
 
 		public static Attribute GetAttribute(MemberInfo info, Type type)
 		{
-#if SIMPLE_JSON_TYPEINFO
+#if SIMPLE_JSON_TYPEINFO || NETFXCORE
                 if (info == null || type == null || !info.IsDefined(type))
                     return null;
                 return info.GetCustomAttribute(type);
@@ -1594,8 +1594,8 @@ namespace Elasticsearch.Net.Serialization
 		public static Type GetGenericListElementType(Type type)
 		{
 			IEnumerable<Type> interfaces;
-#if SIMPLE_JSON_TYPEINFO
-                interfaces = type.GetTypeInfo().ImplementedInterfaces;
+#if SIMPLE_JSON_TYPEINFO || NETFXCORE
+            interfaces = type.GetTypeInfo().ImplementedInterfaces;
 #else
 			interfaces = type.GetInterfaces();
 #endif
@@ -1670,13 +1670,8 @@ namespace Elasticsearch.Net.Serialization
 				return true;
 #endif
 
-#if NETFXCORE
-            if (!GetTypeInfo(type).GetTypeInfo().IsGenericType)
-				return false;
-#else
             if (!GetTypeInfo(type).IsGenericType)
 				return false;
-#endif
 
             Type genericDefinition = type.GetGenericTypeDefinition();
 			return genericDefinition == typeof(IDictionary<,>);
@@ -1700,7 +1695,7 @@ namespace Elasticsearch.Net.Serialization
 		public static IEnumerable<ConstructorInfo> GetConstructors(Type type)
 		{
 #if SIMPLE_JSON_TYPEINFO
-                return type.GetTypeInfo().DeclaredConstructors;
+            return type.GetTypeInfo().DeclaredConstructors;
 #else
 			return type.GetConstructors();
 #endif

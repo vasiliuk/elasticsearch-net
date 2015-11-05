@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+#if NETFXCORE
 namespace System.Net
 {
-    public class HttpWebRequest
+    public class HttpWebRequest : WebRequest
     {
         public static int DefaultMaximumErrorResponseLength { get; internal set; }
         public string Accept { get; internal set; }
@@ -25,45 +28,52 @@ namespace System.Net
         public ServicePoint ServicePoint { get; internal set; }
         public int Timeout { get; internal set; }
 
+        Uri uri;
+
+        HttpClient activeHttpClient;
+
+        internal HttpWebRequest(Uri uri)
+        {
+            this.uri = uri;
+        }
+
         public void Abort()
         {
-            throw new NotImplementedException();
+            var client = Interlocked.Exchange(ref activeHttpClient, null);
+            client.Dispose();
         }
 
         public Stream GetRequestStream()
         {
-            throw new NotImplementedException();
-        }
-
-        Func<Stream> _GetRequestStream;
-
-        public IAsyncResult BeginGetRequestStream(AsyncCallback callback, object @object)
-        {
-            return _GetRequestStream.BeginInvoke(callback, @object);
-        }
-
-        public Stream EndGetRequestStream(IAsyncResult result)
-        {
-            return _GetRequestStream.EndInvoke(result);
+            return GetRequestStreamAsync(CancellationToken.None).GetAwaiter().GetResult();
         }
 
         public HttpWebResponse GetResponse()
         {
-            throw new NotImplementedException();
+            return GetResponseAsync(CancellationToken.None).GetAwaiter().GetResult();
         }
 
-        internal IAsyncResult BeginGetResponse(AsyncCallback callback, object @object)
+        static Dictionary<string, HttpMethod> stringToHttpMethodMap = new Dictionary<string, HttpMethod>()
         {
-            throw new NotImplementedException();
-        }
+            { "DELETE", HttpMethod.Delete},
+            { "GET", HttpMethod.Get },
+            { "HEAD", HttpMethod.Head },
+            { "OPTIONS", HttpMethod.Options },
+            { "POST", HttpMethod.Post },
+            { "PUT", HttpMethod.Put },
+            { "TRACE", HttpMethod.Trace }
+        };
 
-        internal HttpWebResponse EndGetResponse(IAsyncResult obj)
-        {
-            throw new NotImplementedException();
-        }
 
         internal Task<Stream> GetRequestStreamAsync(CancellationToken token)
         {
+            //HttpMethod method;
+            //if (!stringToHttpMethodMap.TryGetValue(this.Method, out method))
+            //    throw new InvalidOperationException($"Unknown method :{this.Method}");
+
+            //var httpReqMessage = new HttpRequestMessage()
+            //var httpClient = new HttpClient().SendAsync()
+
             throw new NotImplementedException();
         }
 
@@ -73,3 +83,4 @@ namespace System.Net
         }
     }
 }
+#endif

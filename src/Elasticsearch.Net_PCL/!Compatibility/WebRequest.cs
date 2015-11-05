@@ -7,7 +7,11 @@ namespace System.Net
     {
         internal static HttpWebRequest Create(Uri uri)
         {
-            throw new NotImplementedException();
+            if ("http".Equals(uri.Scheme, StringComparison.OrdinalIgnoreCase) ||
+                "https".Equals(uri.Scheme, StringComparison.OrdinalIgnoreCase))
+                return new HttpWebRequest(uri);
+
+            throw new NotImplementedException(); // notsupportedexception ??
         }
     }
 }

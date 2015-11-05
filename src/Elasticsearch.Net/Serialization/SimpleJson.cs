@@ -1566,7 +1566,7 @@ namespace Elasticsearch.Net.Serialization
 
 		public delegate TValue ThreadSafeDictionaryValueFactory<TKey, TValue>(TKey key);
 
-#if SIMPLE_JSON_TYPEINFO
+#if SIMPLE_JSON_TYPEINFO || NETFXCORE
             public static TypeInfo GetTypeInfo(Type type)
             {
                 return type.GetTypeInfo();
@@ -1613,7 +1613,7 @@ namespace Elasticsearch.Net.Serialization
 		public static Attribute GetAttribute(Type objectType, Type attributeType)
 		{
 
-#if SIMPLE_JSON_TYPEINFO
+#if SIMPLE_JSON_TYPEINFO || NETFXCORE
                 if (objectType == null || attributeType == null || !objectType.GetTypeInfo().IsDefined(attributeType))
                     return null;
                 return objectType.GetTypeInfo().GetCustomAttribute(attributeType);
@@ -1635,8 +1635,8 @@ namespace Elasticsearch.Net.Serialization
 
 		public static bool IsTypeGeneric(Type type)
 		{
-			return GetTypeInfo(type).IsGenericType;
-		}
+            return GetTypeInfo(type).IsGenericType;
+        }
 
 		public static bool IsTypeGenericeCollectionInterface(Type type)
 		{
@@ -1669,10 +1669,16 @@ namespace Elasticsearch.Net.Serialization
 			if (typeof(System.Collections.IDictionary).IsAssignableFrom(type))
 				return true;
 #endif
-			if (!GetTypeInfo(type).IsGenericType)
-				return false;
 
-			Type genericDefinition = type.GetGenericTypeDefinition();
+#if NETFXCORE
+            if (!GetTypeInfo(type).GetTypeInfo().IsGenericType)
+				return false;
+#else
+            if (!GetTypeInfo(type).IsGenericType)
+				return false;
+#endif
+
+            Type genericDefinition = type.GetGenericTypeDefinition();
 			return genericDefinition == typeof(IDictionary<,>);
 		}
 

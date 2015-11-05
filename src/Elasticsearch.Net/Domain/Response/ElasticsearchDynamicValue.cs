@@ -176,11 +176,19 @@ namespace Elasticsearch.Net
 					{
 						var converter = TypeDescriptor.GetConverter(TType);
 
-						if (converter.IsValid(stringValue))
+                        // TODO: verify this change
+#if NETFXCORE
+                        try
+                        {
+                            return (T)converter.ConvertFromInvariantString(stringValue);
+                        }catch(NotSupportedException) { }
+#else
+                        if (converter.IsValid(stringValue))
 						{
 							return (T)converter.ConvertFromInvariantString(stringValue);
 						}
-					}
+#endif
+                    }
 					else if (TType == typeof(string))
 					{
 						return (T)Convert.ChangeType(value, TypeCode.String, CultureInfo.InvariantCulture);
@@ -330,14 +338,22 @@ namespace Elasticsearch.Net
 			}
 			else
 			{
-				if (binderType.IsGenericType && binderType.GetGenericTypeDefinition() == typeof(Nullable<>))
-				{
+#if NETFXCORE
+                if (binderType.GetTypeInfo().IsGenericType && binderType.GetGenericTypeDefinition() == typeof(Nullable<>))
+#else
+                if (binderType.IsGenericType && binderType.GetGenericTypeDefinition() == typeof(Nullable<>))
+#endif
+                {
 					binderType = binderType.GetGenericArguments()[0];
 				}
 
-				var typeCode = Type.GetTypeCode(binderType);
+#if NETFXCORE
+                var typeCode = binderType.GetTypeCode();
+#else
+                var typeCode = Type.GetTypeCode(binderType);
+#endif
 
-				if (typeCode == TypeCode.Object)
+                if (typeCode == TypeCode.Object)
 				{
 					if (binderType.IsAssignableFrom(value.GetType()))
 					{
@@ -350,7 +366,12 @@ namespace Elasticsearch.Net
 					}
 				}
 
-				result = Convert.ChangeType(value, typeCode);
+#if NETFXCORE
+                // TODO: check if it behave exactly to .NET 4.5
+                result = Convert.ChangeType(value, binderType);
+#else
+                result = Convert.ChangeType(value, typeCode);
+#endif
 
 				return true;
 			}
@@ -369,8 +390,12 @@ namespace Elasticsearch.Net
 				return false;
 			}
 
-			if (dynamicValue.value.GetType().IsValueType)
-			{
+#if NETFXCORE
+            if (dynamicValue.value.GetType().GetTypeInfo().IsValueType)
+#else
+            if (dynamicValue.value.GetType().IsValueType)
+#endif
+            {
 				return (Convert.ToBoolean(dynamicValue.value));
 			}
 
@@ -392,9 +417,13 @@ namespace Elasticsearch.Net
 
 		public static implicit operator int(ElasticsearchDynamicValue dynamicValue)
 		{
-			if (dynamicValue.value.GetType().IsValueType)
-			{
-				return Convert.ToInt32(dynamicValue.value);
+#if NETFXCORE
+            if (dynamicValue.value.GetType().GetTypeInfo().IsValueType)
+#else
+            if (dynamicValue.value.GetType().IsValueType)
+#endif
+            {
+                return Convert.ToInt32(dynamicValue.value);
 			}
 
 			return int.Parse(dynamicValue.ToString());
@@ -432,8 +461,12 @@ namespace Elasticsearch.Net
 
 		public static implicit operator long(ElasticsearchDynamicValue dynamicValue)
 		{
-			if (dynamicValue.value.GetType().IsValueType)
-			{
+#if NETFXCORE
+            if (dynamicValue.value.GetType().GetTypeInfo().IsValueType)
+#else
+            if (dynamicValue.value.GetType().IsValueType)
+#endif
+            {
 				return Convert.ToInt64(dynamicValue.value);
 			}
 
@@ -442,9 +475,13 @@ namespace Elasticsearch.Net
 
 		public static implicit operator float(ElasticsearchDynamicValue dynamicValue)
 		{
-			if (dynamicValue.value.GetType().IsValueType)
-			{
-				return Convert.ToSingle(dynamicValue.value);
+#if NETFXCORE
+            if (dynamicValue.value.GetType().GetTypeInfo().IsValueType)
+#else
+            if (dynamicValue.value.GetType().IsValueType)
+#endif
+            {
+                return Convert.ToSingle(dynamicValue.value);
 			}
 
 			return float.Parse(dynamicValue.ToString());
@@ -452,9 +489,13 @@ namespace Elasticsearch.Net
 
 		public static implicit operator decimal(ElasticsearchDynamicValue dynamicValue)
 		{
-			if (dynamicValue.value.GetType().IsValueType)
-			{
-				return Convert.ToDecimal(dynamicValue.value);
+#if NETFXCORE
+            if (dynamicValue.value.GetType().GetTypeInfo().IsValueType)
+#else
+            if (dynamicValue.value.GetType().IsValueType)
+#endif
+            {
+                return Convert.ToDecimal(dynamicValue.value);
 			}
 
 			return decimal.Parse(dynamicValue.ToString());
@@ -462,15 +503,19 @@ namespace Elasticsearch.Net
 
 		public static implicit operator double(ElasticsearchDynamicValue dynamicValue)
 		{
-			if (dynamicValue.value.GetType().IsValueType)
-			{
-				return Convert.ToDouble(dynamicValue.value);
+#if NETFXCORE
+            if (dynamicValue.value.GetType().GetTypeInfo().IsValueType)
+#else
+            if (dynamicValue.value.GetType().IsValueType)
+#endif
+            {
+                return Convert.ToDouble(dynamicValue.value);
 			}
 
 			return double.Parse(dynamicValue.ToString());
 		}
 
-		#region Implementation of IConvertible
+#region Implementation of IConvertible
 
 		/// <summary>
 		/// Returns the <see cref="T:System.TypeCode"/> for this instance.
@@ -482,17 +527,22 @@ namespace Elasticsearch.Net
 		public TypeCode GetTypeCode()
 		{
 			if (value == null) return TypeCode.Empty;
-			return Type.GetTypeCode(value.GetType());
-		}
 
-		/// <summary>
-		/// Converts the value of this instance to an equivalent Boolean value using the specified culture-specific formatting information.
-		/// </summary>
-		/// <returns>
-		/// A Boolean value equivalent to the value of this instance.
-		/// </returns>
-		/// <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information. </param><filterpriority>2</filterpriority>
-		public bool ToBoolean(IFormatProvider provider)
+#if NETFXCORE
+            return value.GetType().GetTypeCode();
+#else
+            return Type.GetTypeCode(value.GetType());
+#endif
+        }
+
+        /// <summary>
+        /// Converts the value of this instance to an equivalent Boolean value using the specified culture-specific formatting information.
+        /// </summary>
+        /// <returns>
+        /// A Boolean value equivalent to the value of this instance.
+        /// </returns>
+        /// <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information. </param><filterpriority>2</filterpriority>
+        public bool ToBoolean(IFormatProvider provider)
 		{
 			return Convert.ToBoolean(value, provider);
 		}
@@ -681,7 +731,7 @@ namespace Elasticsearch.Net
 			return Convert.ChangeType(value, conversionType, provider);
 		}
 
-		#endregion
+#endregion
 
 	}
 }

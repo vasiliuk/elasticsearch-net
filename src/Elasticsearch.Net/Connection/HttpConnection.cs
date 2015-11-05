@@ -333,30 +333,39 @@ namespace Elasticsearch.Net.Connection
 		{
 			var timeout = GetRequestTimeout(requestSpecificConfig);
 
-			if (data != null)
-			{
-				var getRequestStream = Task.Factory.FromAsync<Stream>(request.BeginGetRequestStream, request.EndGetRequestStream, null);
+            if (data != null)
+            {
+                var getRequestStream = Task.Factory.FromAsync<Stream>(request.BeginGetRequestStream, request.EndGetRequestStream, null);
 				ThreadPool.RegisterWaitForSingleObject((getRequestStream as IAsyncResult).AsyncWaitHandle, ThreadTimeoutCallback, request, timeout, true);
-				yield return getRequestStream;
+                yield return getRequestStream;
+//#endif
 
-				var requestStream = getRequestStream.Result;
+
+                var requestStream = getRequestStream.Result;
 				try
 				{
 					if (this.ConnectionSettings.EnableHttpCompression)
 					{
 						using (var zipStream = new GZipStream(requestStream, CompressionMode.Compress))
 						{
-
-							var writeToRequestStream = Task.Factory.FromAsync(zipStream.BeginWrite, zipStream.EndWrite, data, 0,
+#if NETFXCORE
+                            yield return zipStream.WriteAsync(data, 0, data.Length);
+#else
+                            var writeToRequestStream = Task.Factory.FromAsync(zipStream.BeginWrite, zipStream.EndWrite, data, 0,
 								data.Length, null);
 							yield return writeToRequestStream;
+#endif
 						}
 					}
 					else
 					{
-						var writeToRequestStream = Task.Factory.FromAsync(requestStream.BeginWrite, requestStream.EndWrite, data, 0,
+#if NETFXCORE
+                        yield return requestStream.WriteAsync(data, 0, data.Length);
+#else
+                        var writeToRequestStream = Task.Factory.FromAsync(requestStream.BeginWrite, requestStream.EndWrite, data, 0,
 							data.Length, null);
 						yield return writeToRequestStream;
+#endif
 					}
 				}
 				finally

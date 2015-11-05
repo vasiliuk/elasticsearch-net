@@ -11,9 +11,10 @@ namespace Elasticsearch.Net.ConnectionPool
 
 		public bool AcceptsUpdates { get { return false; } }
 		
-		public bool UsingSsl { get { return _uri.Scheme == Uri.UriSchemeHttps; } }
+		//public bool UsingSsl { get { return _uri.Scheme == Uri.UriSchemeHttps; } }
+        public bool UsingSsl { get { return "https".Equals(_uri.Scheme, StringComparison.OrdinalIgnoreCase); } }
 
-		public bool SniffedOnStartup
+        public bool SniffedOnStartup
 		{
 			get { return false; }
 			set {  }

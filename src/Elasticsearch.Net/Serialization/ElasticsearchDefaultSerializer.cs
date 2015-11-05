@@ -59,8 +59,12 @@ namespace Elasticsearch.Net.Serialization
 					var buffer = new byte[BUFFER_SIZE];
 					while (stream != null)
 					{
-						var read = Task<int>.Factory.FromAsync(stream.BeginRead, stream.EndRead, buffer, 0, BUFFER_SIZE, null);
-						yield return read;
+#if NETFXCORE
+                        var read = stream.ReadAsync(buffer, 0, BUFFER_SIZE);
+#else
+                        var read = Task<int>.Factory.FromAsync(stream.BeginRead, stream.EndRead, buffer, 0, BUFFER_SIZE, null);
+#endif
+                        yield return read;
 						if (read.Result == 0) break;
 						ms.Write(buffer, 0, read.Result);
 					}

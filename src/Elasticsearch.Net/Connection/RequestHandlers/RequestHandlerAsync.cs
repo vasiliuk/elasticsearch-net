@@ -358,7 +358,11 @@ namespace Elasticsearch.Net.Connection.RequestHandlers
 			{
 				while (responseStream != null)
 				{
-					var read = Task<int>.Factory.FromAsync(responseStream.BeginRead, responseStream.EndRead, buffer, 0, BufferSize, null);
+#if NETFXCORE
+                    var read = responseStream.ReadAsync(buffer, 0, BufferSize);
+#else
+                    var read = Task<int>.Factory.FromAsync(responseStream.BeginRead, responseStream.EndRead, buffer, 0, BufferSize, null);
+#endif
 					yield return read.ContinueWith(t => memoryStream);
 					if (read.Result == 0) break;
 					memoryStream.Write(buffer, 0, read.Result);

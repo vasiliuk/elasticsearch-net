@@ -36,8 +36,9 @@ namespace Elasticsearch.Net.ConnectionPool
 			NodeUris = uris.Distinct().ToList();
 			if (uris.Select(u => u.Scheme).Distinct().Count() > 1)
 				throw new ArgumentException("Mixed URI schemes detected.");
-			this.UsingSsl = uris.All(uri => uri.Scheme == Uri.UriSchemeHttps);
-			if (randomizeOnStartup)
+			//this.UsingSsl = uris.All(uri => uri.Scheme this.UsingSsl = uris.All(uri => "https".Equals(uri.Scheme, StringComparison.OrdinalIgnoreCase));== Uri.UriSchemeHttps);
+            this.UsingSsl = uris.All(uri => "https".Equals(uri.Scheme, StringComparison.OrdinalIgnoreCase));
+            if (randomizeOnStartup)
 				NodeUris = NodeUris.OrderBy((item) => rnd.Next()).ToList();
 			UriLookup = NodeUris.ToDictionary(k=>k, v=> new EndpointState());
 		}

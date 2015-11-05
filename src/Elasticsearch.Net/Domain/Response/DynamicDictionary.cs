@@ -18,13 +18,17 @@ namespace Elasticsearch.Net
 		IEnumerable<string>, 
 		IDictionary<string, object>
 	{
-		protected readonly IDictionary<string, dynamic> dictionary = new Dictionary<string, dynamic>(StringComparer.InvariantCultureIgnoreCase);
+#if NETFXCORE
+        protected readonly IDictionary<string, dynamic> dictionary = new Dictionary<string, dynamic>(StringComparer.OrdinalIgnoreCase);
+#else
+        protected readonly IDictionary<string, dynamic> dictionary = new Dictionary<string, dynamic>(StringComparer.InvariantCultureIgnoreCase);
+#endif
 
-		/// <summary>
-		/// Returns an empty dynamic dictionary.
-		/// </summary>
-		/// <value>A <see cref="DynamicDictionary"/> instance.</value>
-		public static DynamicDictionary Empty
+        /// <summary>
+        /// Returns an empty dynamic dictionary.
+        /// </summary>
+        /// <value>A <see cref="DynamicDictionary"/> instance.</value>
+        public static DynamicDictionary Empty
 		{
 			get
 			{

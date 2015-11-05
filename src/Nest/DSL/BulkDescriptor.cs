@@ -41,8 +41,12 @@ namespace Nest
 
 		public BulkDescriptor()
 		{
-			Self.Operations = new SynchronizedCollection<IBulkOperation>();
-		}
+#if NETFXCORE
+            Self.Operations = new SynchronizedCollection<IBulkOperation>();
+#else
+            Self.Operations = new SynchronizedCollection<IBulkOperation>();
+#endif
+        }
 
 		public BulkDescriptor Create<T>(Func<BulkCreateDescriptor<T>, BulkCreateDescriptor<T>> bulkCreateSelector) where T : class
 		{

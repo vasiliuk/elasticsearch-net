@@ -2946,6 +2946,7 @@
     <Compile Include="..\Nest\Resolvers\Writers\WritePropertiesFromAttributeVisitor.cs">
       <Link>Resolvers\Writers\WritePropertiesFromAttributeVisitor.cs</Link>
     </Compile>
+    <Compile Include="!Compatibility\SynchronizedCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

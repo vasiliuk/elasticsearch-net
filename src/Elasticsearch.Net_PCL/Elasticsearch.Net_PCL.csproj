@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62500BA0-D853-49F1-88C0-4FA1B618AA76}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Elasticsearch.Net_PCL</RootNamespace>
+    <AssemblyName>Elasticsearch.Net_PCL</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFXCORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFXCORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="!Compatibility\Browsable.cs" />
+    <Compile Include="!Compatibility\HttpWebRequest.cs" />
+    <Compile Include="!Compatibility\StreamExtensions.cs" />
+    <Compile Include="!Compatibility\TypeExtensions.cs" />
+    <Compile Include="!Compatibility\WebExceptionStatus.cs" />
+    <Compile Include="!Compatibility\WebResponse.cs" />
+    <Compile Include="..\Elasticsearch.Net\ConnectionPool\EndpointState.cs">
+      <Link>ConnectionPool\EndpointState.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\ConnectionPool\IConnectionPool.cs">
+      <Link>ConnectionPool\IConnectionPool.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\ConnectionPool\SingleNodeConnectionPool.cs">
+      <Link>ConnectionPool\SingleNodeConnectionPool.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\ConnectionPool\SniffingConnectionPool.cs">
+      <Link>ConnectionPool\SniffingConnectionPool.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\ConnectionPool\StaticConnectionPool.cs">
+      <Link>ConnectionPool\StaticConnectionPool.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\Configuration\ConnectionConfiguration.cs">
+      <Link>Connection\Configuration\ConnectionConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\Configuration\IConnectionConfiguration.cs">
+      <Link>Connection\Configuration\IConnectionConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\Configuration\IConnectionConfigurationValues.cs">
+      <Link>Connection\Configuration\IConnectionConfigurationValues.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\Configuration\IRequestConfiguration.cs">
+      <Link>Connection\Configuration\IRequestConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\Configuration\RequestConfiguration.cs">
+      <Link>Connection\Configuration\RequestConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\Configuration\RequestConfigurationDescriptor.cs">
+      <Link>Connection\Configuration\RequestConfigurationDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\HttpConnection.cs">
+      <Link>Connection\HttpConnection.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\IConnection.cs">
+      <Link>Connection\IConnection.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\InMemoryConnection.cs">
+      <Link>Connection\InMemoryConnection.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\ITransport.cs">
+      <Link>Connection\ITransport.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\ITransportDelegator.cs">
+      <Link>Connection\ITransportDelegator.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\RequestHandlers\RequestHandler.cs">
+      <Link>Connection\RequestHandlers\RequestHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\RequestHandlers\RequestHandlerAsync.cs">
+      <Link>Connection\RequestHandlers\RequestHandlerAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\RequestHandlers\RequestHandlerBase.cs">
+      <Link>Connection\RequestHandlers\RequestHandlerBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\RequestState\IRequestTimings.cs">
+      <Link>Connection\RequestState\IRequestTimings.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\RequestState\ITransportRequestState.cs">
+      <Link>Connection\RequestState\ITransportRequestState.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\RequestState\NoopRequestTimings.cs">
+      <Link>Connection\RequestState\NoopRequestTimings.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\RequestState\RequestTimings.cs">
+      <Link>Connection\RequestState\RequestTimings.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\RequestState\TransportRequestState.cs">
+      <Link>Connection\RequestState\TransportRequestState.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\Security\BasicAuthorizationCredentials.cs">
+      <Link>Connection\Security\BasicAuthorizationCredentials.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Connection\Transport.cs">
+      <Link>Connection\Transport.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\Enums.Generated.cs">
+      <Link>Domain\Enums.Generated.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\IHideObjectMembers.cs">
+      <Link>Domain\IHideObjectMembers.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\RequestParameters\BaseRequestParameters.cs">
+      <Link>Domain\RequestParameters\BaseRequestParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\RequestParameters\FluentRequestParameters.cs">
+      <Link>Domain\RequestParameters\FluentRequestParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\RequestParameters\IRequestParameters.cs">
+      <Link>Domain\RequestParameters\IRequestParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\RequestParameters\RequestParameters.Generated.cs">
+      <Link>Domain\RequestParameters\RequestParameters.Generated.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\Response\CallMetrics.cs">
+      <Link>Domain\Response\CallMetrics.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\Response\DynamicDictionary.cs">
+      <Link>Domain\Response\DynamicDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\Response\ElasticsearchDynamicValue.cs">
+      <Link>Domain\Response\ElasticsearchDynamicValue.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\Response\ElasticsearchResponse.cs">
+      <Link>Domain\Response\ElasticsearchResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\Response\ElasticsearchServerError.cs">
+      <Link>Domain\Response\ElasticsearchServerError.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\Response\IElasticsearchResponse.cs">
+      <Link>Domain\Response\IElasticsearchResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\Response\RequestMetrics.cs">
+      <Link>Domain\Response\RequestMetrics.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\Response\RequestType.cs">
+      <Link>Domain\Response\RequestType.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Domain\Response\VoidResponse.cs">
+      <Link>Domain\Response\VoidResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\ElasticsearchClient.cs">
+      <Link>ElasticsearchClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\ElasticsearchClient.Generated.cs">
+      <Link>ElasticsearchClient.Generated.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Exceptions\ConnectionException.cs">
+      <Link>Exceptions\ConnectionException.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Exceptions\ElasticsearchAuthException.cs">
+      <Link>Exceptions\ElasticsearchAuthException.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Exceptions\ElasticsearchServerException.cs">
+      <Link>Exceptions\ElasticsearchServerException.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Exceptions\MaxRetryException.cs">
+      <Link>Exceptions\MaxRetryException.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Exceptions\OneToOneServerException.cs">
+      <Link>Exceptions\OneToOneServerException.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Extensions\DateExtensions.cs">
+      <Link>Extensions\DateExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Extensions\Extensions.cs">
+      <Link>Extensions\Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Extensions\NameValueCollectionExtensions.cs">
+      <Link>Extensions\NameValueCollectionExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Extensions\StringExtensions.cs">
+      <Link>Extensions\StringExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Extensions\TypeExtensions.cs">
+      <Link>Extensions\TypeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\IElasticsearchClient.cs">
+      <Link>IElasticsearchClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\IElasticsearchClient.Generated.cs">
+      <Link>IElasticsearchClient.Generated.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Obsolete\IndicesDeleteAlias.cs">
+      <Link>Obsolete\IndicesDeleteAlias.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Obsolete\IndicesExistsAlias.cs">
+      <Link>Obsolete\IndicesExistsAlias.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Obsolete\IndicesExistsType.cs">
+      <Link>Obsolete\IndicesExistsType.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Obsolete\IndicesGetFieldMapping.cs">
+      <Link>Obsolete\IndicesGetFieldMapping.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Obsolete\IndicesPutAlias.cs">
+      <Link>Obsolete\IndicesPutAlias.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Obsolete\IndicesRecoveryStatus.cs">
+      <Link>Obsolete\IndicesRecoveryStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Obsolete\IndicesTemplateExists.cs">
+      <Link>Obsolete\IndicesTemplateExists.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Obsolete\Mpercolate.cs">
+      <Link>Obsolete\Mpercolate.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Obsolete\Obsolete.cs">
+      <Link>Obsolete\Obsolete.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Providers\DateTimeProvider.cs">
+      <Link>Providers\DateTimeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Providers\IDateTimeProvider.cs">
+      <Link>Providers\IDateTimeProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Providers\IMemoryStreamProvider.cs">
+      <Link>Providers\IMemoryStreamProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Providers\MemoryStreamProvider.cs">
+      <Link>Providers\MemoryStreamProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Providers\Sniffer.cs">
+      <Link>Providers\Sniffer.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Purify\IPurify.cs">
+      <Link>Purify\IPurify.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Purify\PurifierDotNet.cs">
+      <Link>Purify\PurifierDotNet.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Purify\PurifierMono.cs">
+      <Link>Purify\PurifierMono.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Purify\Purify.cs">
+      <Link>Purify\Purify.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Purify\UriInfo.cs">
+      <Link>Purify\UriInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Serialization\ElasticsearchDefaultSerializer.cs">
+      <Link>Serialization\ElasticsearchDefaultSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Serialization\IElasticsearchSerializer.cs">
+      <Link>Serialization\IElasticsearchSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Serialization\SerializationFormatting.cs">
+      <Link>Serialization\SerializationFormatting.cs</Link>
+    </Compile>
+    <Compile Include="..\Elasticsearch.Net\Serialization\SimpleJson.cs">
+      <Link>Serialization\SimpleJson.cs</Link>
+    </Compile>
+    <Compile Include="!Compatibility\ServicePoint.cs" />
+    <Compile Include="!Compatibility\WebProxy.cs" />
+    <Compile Include="!Compatibility\WebRequest.cs" />
+    <Compile Include="!Compatibility\HttpWebResponse.cs" />
+    <Compile Include="!Compatibility\WebException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
